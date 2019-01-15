@@ -34,7 +34,7 @@
 			<li>
 				The uniqueness of Tim Berners-Lee’s Web comes from the general principles standing behind his idea. The three essential technologies of Web are: Locating documents through Uniform Resource Locators, Document representation using Hypertext Markup Language and Communication via Hypertext Transport Protocol.<sup><a href="#fn3" id="ref3">3</a></sup>
 			</li>
-			<li>					
+			<li>
        Changes: in DOCTYPE declaration - info about HTML version, in head - CSS style declared, information about software, creation date and last changed date, in body - declaration of the language, direction of the text.
 			</li>
 			<li>
@@ -201,7 +201,7 @@
         <p>
           IPv6 is the latest version of the Internet Protocol, which is used to identify every device on the internet such that they can be located. Every individual device that is using the internet has to have such IP address. With the rapid expansion of the internet from the 2000s onward it could have clearly been expected that certain systems within the internet will need to be replaced by better version due to the rising demand. Since the internet operates through the system of locating the source and receiver, and because of the limited nature of 1s and 0s, the number of possible ways to uniquely identify a device is steadily reaching its breaking point. IPv4 has been created with the capability of having 4.3 billion unique addresses. That number is a hard limitation on how the system has been created and in case that limit is reached a brand new solution needs to be implemented. <br />
           In 1998 IETF has realized that and created the new version, the IPv6. The main feature of that version is the ability to store 340 trillion unique IP addresses and by that eliminating, for now, the fear of the limited number of IP addresses. However, that was not the only thing that has changed. NAT, Network address translation, is a tool which allows the division between private and public IP addresses which in turn allow a lot of devices to be represented by a single IP address outside of the local network. With the very limited space for IP's, that was a crucial part of IPv4. With IPv6 the number of IP addresses is so "limitless" that such method will not be required. Last, but not least, IPv6 also has simplified the header by moving all the unnecessary information and options to the end of the IPv6 header. That way the information contained in the first part of the header is adequate for a Router to take routing decision which in turn allow the quicker connection between source and receiver. <br />
-          The price of IPv4 addresses is said to peak in 2018 and they will drop after the deployment of IPv6 passes 50%. According to Google, the world has 20% to 22% IPv6 adoption, however, in the US it is about 32%. With the continuing increase in demand for bandwidth and latency, the change to IPv6 seems like an obvious decision to take immediately, however such huge structual changed to take a long time. Fortunately, everything points to the future where IPv6 will be dominant which is definitely good news for everyday end users. 
+          The price of IPv4 addresses is said to peak in 2018 and they will drop after the deployment of IPv6 passes 50%. According to Google, the world has 20% to 22% IPv6 adoption, however, in the US it is about 32%. With the continuing increase in demand for bandwidth and latency, the change to IPv6 seems like an obvious decision to take immediately, however such huge structual changed to take a long time. Fortunately, everything points to the future where IPv6 will be dominant which is definitely good news for everyday end users.
         </p>
       </li>
       <li>
@@ -241,22 +241,84 @@
       </li>
       <li>
         <pre>
-<body onload="myFunction()">
-    <script>
-      function myFunction() {
-        document.body.style.backgroundColor = "red";
-      }
-    </script>
+&lt;body onload="myFunction()"&gt;
+  &lt;script&gt;
+    function myFunction() {
+      document.body.style.backgroundColor = "red";
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+        </pre>
+        <pre>
+&lt;body&gt;
+  &lt;script&gt;
+    function myFunction(link) {
+      link.style.color = "green";
+    }
+  &lt;/script&gt;
+  &lt;a onclick="myFunction(this)" href="#"&gt;Test&lt;/a&gt;
+&lt;/body&gt;
         </pre>
       </li>
       <li>
-        Q3
+        <pre>
+&lt;body&gt;
+  &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    $(document).ready(function(){
+      $(".jumpLink").click(function(){
+        $(this).css({'color': 'green'});
+      });
+    });
+  &lt;/script&gt;
+  &lt;a class="jumpLink" href="#"&gt;Test&lt;/a&gt;
+&lt;/body&gt;
+        </pre>
+        <p>
+          The fundamental difference between those two is that JavaScript is a programming language while jQuery is JavaScript library.
+          <br />
+          Comparison of jQuery and JavaScript:
+          <ul>
+            <li>
+              jQuery provides you with a nice framework to work efficiently while in JavaScript everything has to be done from the beginning, meaning that the final result can be more well tailored for your needs but it comes at the cost of time and ease of use.
+            </li>
+            <li>
+              jQuery simplifies HTML document traversing, event handling, animating and AJAX interactions.
+            </li>
+            <li>
+              Since the internet as we know it today was created with JavaScript in mind there is no need to initiate it in any way because all modern browsers support it. jQuery on the other hand requires the jQuery library URL to be included in the header of the page.
+            </li>
+          </ul>
+        </p>
       </li>
       <li>
-        Q4
+        Python - a scripting, high-level programming language with dynamic semantics and object-oriented programming. Java-Script is an object-oriented programming language for creating dynamic web pages.
+        Main differences between Python and Java-Script:
+          Python:
+        <ol>
+          <li>Supports functional programming, object-oriented, imperative and procedural programming.
+          </li>
+          <li>Available on MAC and Linux by default
+          </li>
+          <li>No need for using libraries
+          </li>
+          <li>Used mainly by data scientists
+          </li>
+        </ol>
+          Java-Script:
+          <ol>
+          <li>Supports functional, object-oriented and imperative programming as Python, however, not procedural programming.
+          </li>
+          <li>Available on all browsers
+          </li>
+          <li>Plenty of libraries for different reasons: DOM-orientated, graphical/vizualization and so on.
+          </li>
+          <li>Used by software developers.
+          </li>
+          </ol>
       </li>
       <li>
-        Q5
+        AJAX stands for Asynchronous JavaScript and XML. That means a group of inter-related technologies, which are used for creating faster and more interactive web applications, such as XML, HTML, CSS, and Java Script. Asynchronous means that the browser doesn't refresh the web page when small amount of data has changed. AJAX passes the updated information to and from the server.
       </li>
       <li>
         Q6
