@@ -3,27 +3,6 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="Screen.css">
 		<title>Grocery Delivery</title>
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script>
-  	$( function() {
-    	var state = true;
-    	$( "#button" ).on( "click", function() {
-      	if ( state ) {
-        	$( "#effect" ).animate({
-          	backgroundColor: "Black",
-						color: "White"
-        	}, 1000 );
-	      } else {
-	        $( "#effect" ).animate({
-						backgroundColor: "Cornsilk",
-						color: "Black"
-	        }, 1000 );
-	      }
-	      state = !state;
-	    });
-	  } );
-  	</script>
 	</head>
 
 	<body>
@@ -39,16 +18,9 @@
 			<a class="about" href="index-about.html">About</a>
 		</nav>
     <section class="Lists">
-
-			<div class="toggler">
-				<div id="effect">
-					<h2 class="ListsTitle">
-			      Why should you choose us?
-			    </h2>
-				</div>
-			</div>
-			<button id="button">Toggle Effect</button>
-
+			<h2 class="ListsTitle">
+				Why should you choose us?
+			</h2>
 			<ul>
 				<li>
 					<strong>Our values:</strong>

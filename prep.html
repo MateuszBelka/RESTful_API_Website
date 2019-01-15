@@ -339,7 +339,37 @@
         Q9
       </li>
       <li>
-        Q10
+        <pre>
+					<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+					<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+					<script>
+					$( function() {
+						var state = true;
+						$( "#button" ).on( "click", function() {
+							if ( state ) {
+								$( "#effect" ).animate({
+									backgroundColor: "Black",
+									color: "White"
+								}, 1000 );
+							} else {
+								$( "#effect" ).animate({
+									backgroundColor: "Cornsilk",
+									color: "Black"
+								}, 1000 );
+							}
+							state = !state;
+						});
+					} );
+					</script>
+					<div class="toggler">
+						<div id="effect">
+							<h2 class="ListsTitle">
+					      Why should you choose us?
+					    </h2>
+						</div>
+					</div>
+					<button id="button">Toggle Effect</button>
+				</pre>
       </li>
     </ol>
     <h1>Preparation Questions LAB4</h1>
