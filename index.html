@@ -122,7 +122,7 @@ delivered to you today!
         <table id="myTable2">
           <caption class="TableCaption">Products of the day</caption>
           <tr>
-            <th onclick="sortTable(0, "myTable2")">Product</th>
+            <th onclick="sortTable(0, myTable2)">Product</th>
             <th onclick="sortTable(1, "myTable2")">Origin</th>
             <th>Price</th>
             <th>Image</th>
@@ -194,11 +194,11 @@ delivered to you today!
 </script>
 -->
 
-<!--  <button type="button" onclick="reset()">Request data</button>
-<p id="demo"></p>
+<!--  <button type="button" onclick="reset()">Reset</button>
+			<p id="reset"></p>
 
 <script>
-function loadDoc() {
+function reset() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
