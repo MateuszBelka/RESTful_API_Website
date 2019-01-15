@@ -3,6 +3,31 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="Screen.css">
 		<title>Grocery Delivery</title>
+		<script>
+			function sortTable(n) {
+				var table, rows, switching, i, x, y, shouldSwitch, switchcount = 0;
+				table = document.getElementById("myTable");
+				switching = true;
+				while (switching) {
+					switching = false;
+					rows = table.rows;
+					for (i = 1; i < (rows.length - 1); i++) {
+						shouldSwitch = false;
+						x = rows[i].getElementsByTagName("TD")[n];
+						y = rows[i + 1].getElementsByTagName("TD")[n];
+						if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+							shouldSwitch= true;
+							break;
+						}
+					}
+					if (shouldSwitch) {
+						rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+						switching = true;
+						switchcount ++;
+					}
+				}
+			}
+		</script>
 	</head>
 
 	<body>
@@ -51,11 +76,11 @@ delivered to you today!
 		<div class="row">
 			<div class="column1">
         <form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form"></form>
-        <table>
+        <table id="myTable">
         <caption class="TableCaption">Bestsellers</caption>
           <tr>
-            <th>Product</th>
-            <th>Origin</th>
+            <th onclick="sortTable(0)">Product</th>
+            <th onclick="sortTable(1)">Origin</th>
             <th>Best Before Date</th>
             <th>Amount</th>
             <th>Image</th>
@@ -94,11 +119,11 @@ delivered to you today!
         </div>
 			</div>
       <div class="column2">
-        <table>
+        <table id="myTable">
           <caption class="TableCaption">Products of the day</caption>
           <tr>
-            <th>Product</th>
-            <th>Origin</th>
+            <th onclick="sortTable(0)">Product</th>
+            <th onclick="sortTable(1)">Origin</th>
             <th>Price</th>
             <th>Image</th>
           </tr>
@@ -128,3 +153,43 @@ delivered to you today!
 		</div>
 	</body>
 </html>
+<!--
+<script>
+	function sortTable(n) {
+		var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+		table = document.getElementById("myTable");
+		switching = true;
+		dir = "asc";
+		while (switching) {
+			switching = false;
+			rows = table.rows;
+			for (i = 1; i < (rows.length - 1); i++) {
+				shouldSwitch = false;
+				x = rows[i].getElementsByTagName("TD")[n];
+				y = rows[i + 1].getElementsByTagName("TD")[n];
+				if (dir == "asc") {
+					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+						shouldSwitch= true;
+						break;
+					}
+				} else if (dir == "desc") {
+					if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+						shouldSwitch = true;
+						break;
+					}
+				}
+			}
+			if (shouldSwitch) {
+				rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+				switching = true;
+				switchcount ++;
+			} else {
+				if (switchcount == 0 && dir == "asc") {
+					dir = "desc";
+					switching = true;
+				}
+			}
+		}
+	}
+</script>
+-->
