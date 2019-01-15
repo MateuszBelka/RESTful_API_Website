@@ -11,21 +11,13 @@
     	$( "#button" ).on( "click", function() {
       	if ( state ) {
         	$( "#effect" ).animate({
-          	color: "Green",
-						font-size: "60px",
-						margin: "25px auto",
-					  width: "40%",
-					  padding: "10px",
-					  text-align: "center"
+          	backgroundColor: "Black",
+						color: "White"
         	}, 1000 );
 	      } else {
 	        $( "#effect" ).animate({
-						color: "Black",
-						font-size: "40px",
-						margin: "25px auto",
-					  width: "40%",
-					  padding: "10px",
-					  text-align: "center"
+						backgroundColor: "Cornsilk",
+						color: "Black"
 	        }, 1000 );
 	      }
 	      state = !state;
