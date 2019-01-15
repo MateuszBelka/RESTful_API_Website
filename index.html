@@ -3,6 +3,27 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="Screen.css">
 		<title>Grocery Delivery</title>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$(function() {
+				var state = true;
+				$("#specialButton").on("click", function() {
+					if (state == true) {
+						$("#specialEffect").animate({
+							font-size: 150%,
+							color: "#ff3300"
+						}, 1000);
+					} else {
+						$("#specialEffect").animate({
+							font-size: 100%,
+							color: "Black"
+						}, 1000);
+					}
+					state = !state;
+				});
+			});
+		</script>
 	</head>
 
 	<body>
@@ -18,9 +39,16 @@
 			<a class="about" href="index-about.html">About</a>
 		</nav>
     <section class="Lists">
-		  <h2 class="ListsTitle">
-        Why should you choose us?
-      </h2>
+		<div>
+			<div id="specialEffect">
+			  <h2 class="ListsTitle">
+	        Why should you choose us?
+	      </h2>
+			</div>
+		</div>
+
+		<button id="specialButton">Toggle effect</button>
+
 			<ul>
 				<li>
 					<strong>Our values:</strong>
