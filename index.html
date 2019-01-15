@@ -33,15 +33,10 @@
 		</script>
 		<script>
 			function resetDatabase() {
-				alert("Reset started!");
 				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function() {
-    			if (this.readyState == 4 && this.status == 200) {
-    				alert("Successful reset started!");
-    			}
-  			};
 				xhttp.open("GET", "https://wt.ops.labs.vu.nl/api19/bc9041de/reset", true);
   			xhttp.send();
+				alert("Successful reset!");
 			}
 		</script>
 	</head>
