@@ -120,7 +120,7 @@ input:focus {
   background-color: yellow;
 }
 
-div.submitButton {
+.submitButton {
   text-align: center;
 }
 
