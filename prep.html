@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Preparation Questions</title>
+	</head>
+	<body>
+    <h1>Browser Compatability Report</h1>
+		<p>
+      First, we decided which browsers we will use for opening our website. Due to different browsers' limitations, not all of the existing one have a capacity to reveal all the CSS's properties. We used the most popular one - Safari(Apple) and Google Chrome. We discovered few differences:
+      <ol>
+        <li>
+          Safari cannot display abbreviation's meaning; In Google Chrome you can do that;
+        </li>
+        <li>
+          The font is bold in Safari in comparison to Google Chrome;
+        </li>
+        <li>
+          The table is cut the way that half of the picture and name of the Bestseller's product is not visible(Safari);
+        </li>
+        <li>
+          The third input's field does not display the calendar for choosing data(Safari).
+        </li>
+      </ol>
+      However, using Handheld CSS style on mobile versions of Chrome and Safari no differences were found.
+    </p>
+    <h1>Preparation Questions LAB1</h1>
+		<ol>
+			<li>
+				As W3C tries to keep relevancy infield they abandoned in 2004, they take the works of WHATWG and altering them in a way their original creators don&apos;t like it for the sake of making their work as a W3C recommendation. WHATWG calls these changes <q>forks</q>.
+			</li>
+			<li>
+				Using two separate sources we understood the distinction between the Internet and the Web. According to W3C website<sup><a href="#fn1" id="ref1">1</a></sup>, Web is understood to be <q>...universe of network-accessible information […] The Web has a body of software...</q>. As stated by Internet Society (ISOC), Internet <q>is a widespread information infrastructure</q><sup><a href="#fn2" id="ref2">2</a></sup>. To conclude from those two statements we understand the interconnected nature of those two systems as the Web is a software which allows the user to access information through the medium of the internet which is the physical connection between computers.
+			</li>
+			<li>
+				The uniqueness of Tim Berners-Lee’s Web comes from the general principles standing behind his idea. The three essential technologies of Web are: Locating documents through Uniform Resource Locators, Document representation using Hypertext Markup Language and Communication via Hypertext Transport Protocol.<sup><a href="#fn3" id="ref3">3</a></sup>
+			</li>
+			<li>					
+       Changes: in DOCTYPE declaration - info about HTML version, in head - CSS style declared, information about software, creation date and last changed date, in body - declaration of the language, direction of the text.
+			</li>
+			<li>
+				<table id="protocolTable">
+ 					<tr>
+  		 				<th>Protocol</th><th>Protocol Name</th><th>Port Number</th><th>Description</th>
+					</tr>
+					<tr>
+		   				<td>HTTP</td><td>HyperText Transfer Protocol</td><td>80</td><td>Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents, such as HTML.It was designed for communication between web browsers and web servers, but it can also be used for other purposes. We trust the website(https://developer.mozilla.org/bm/docs/Web/HTTP) because it is the learning area that was created by Mozilla Corporation that cooperate and integrates development of Internet-related applications. </td>
+					</tr>
+ 					<tr>
+   		   				<td>SSH</td><td>Secure Shell</td><td>22</td><td>The SSH protocol (also referred to as Secure Shell) is a method for secure remote login from one computer to another. It provides several alternative options for strong authentication, and it protects the communications security and integrity with strong encryption. We believe that the source that we used(https://www.ssh.com/ssh/protocol/) because the website is "the home page for the SSH protocol, software, and related information." </td>
+ 					</tr>
+ 					<tr>
+   		     	   				<td>FTP</td><td>File Transfer Protocol</td><td>20</td><td>FTP is the most widely used standart protocolor for  exchanging files and programs with another computer via Internet. The information we used is from the https://libguides.vu.nl/srch.php?q=ftp&amp;guide_id=410065 page and we believe that we can trust the source as it is VU Amsterdam library website.</td>
+					</tr>
+				</table>
+			</li>
+			<li>
+				&lt;b&gt; is explicit such that it tells the browser that the text should be bold. &lt;strong&gt; is semantic. It leaves room for interpretation from the browser perspective. It simply states that the text in the tag should be <q>stronger</q> than the normal text. It allows changes to what it exactly means for actual styling through CSS. The ability to be flexible makes this preferable choice in modern web design. A similar case is with &lt;i&gt; and &lt;em&gt;.
+			</li>
+			<li>
+				div is a block element, span is inline. Both are used to group a piece of text. Depending on the size of the section you will choose the proper one.
+			</li>
+			<li>
+				The biggest advantage of using CSS is the clarity of code it provides. CSS is meant for style while HTML should not be only used for the structure. The ability to separate structure from style allows for better readability of code for maintenance. CSS gives greater flexibility over the presentation of the webpage as it has more options for styling over HTML. CSS allows the user to change the style in the whole webpage with much more ease. As the complexity of projects increases the automated control over things is greatly appreciated as otherwise the final product is greatly exposed to bugs and the development time is extended.
+			</li>
+			<li>
+				We expected the browser to ignore the second call to emphasize the text or override already existing option to emphasize text which either way gives the same result, being that all the text is in italic font style.
+			</li>
+			<li>
+				Key differences between Chrome and Safari:
+				<ol>
+					<li>Chrome is developed by Google Inc and Safari - by Apple</li>
+					<li>Chrome works on Windows while Safari (after Safari 5) doesn’t support Windows anymore</li>
+					<li>Safari doesn’t support Linux</li>
+					<li>Safari allows extensions from the 3<sup>rd</sup>  party sites</li>
+					<li>Safari is more energy efficient</li>
+				</ol>
+			</li>
+		</ol>
+    <h1>Preparation Questions LAB2</h1>
+    <ol>
+      <li>
+        The most prevalent accessibility error, which does not have ALT texts, corresponds with 1.1 WCAG guidelines - "Decoration, Formatting, Invisible: If non-text content is pure decoration, is used only for visual formatting, or is not presented to users, then it is implemented in a way that it can be ignored by assistive technology."<sup><a href="#fn4" id="ref4">4</a></sup>
+      </li>
+      <li>
+        On the example of Facebook<sup><a href="#fn5" id="ref5">5</a></sup>, we found out that the WAVE Report informs a user about errors, alerts, features, structural elements, HTML and ARIA's property descriptions. Each of the sections shows what does each of them mean, error explanation and how to fix them.
+      </li>
+      <li>
+        We checked 3 color combinations(FC - Foreground Colour, BC - Background Colour):
+        <ol>
+          <li>
+            FC - #000000, BC - #FFFFFF;
+          </li>
+          <li>
+            FC - #FFFFFF, BC - #000000;
+          </li>
+          <li>
+            FC -  #FF0000, BC - #FFFFFF;
+          </li>
+        </ol>
+        The results are shown in the third box and divided into a few categories: "Brightness Difference", "Colour Difference", "Are colours compliant?", "Contrast Ratio", "WCAG 2 AA Compliant", "WCAG 2 AA Compliant (18pt+)", "WCAG 2 AAA Compliant", "WCAG 2 AAA Compliant (18pt+)". "The tool will indicate that the colours pass the test if both the colour difference and the brightness difference exceed their threshold. It will indicate that it sort of passes if only one of the two values exceeds their threshold. And finally, it'll fail to pass if neither value exceeds its threshold. The tool will also indicate if the colours pass the newer WCAG 2.0 contrast ratio formula. The WCAG 2.0 formula differentiates between text smaller than 18pt text larger than 18pt (or text that is bold and larger than 14pt). For AA compliance, text should have a ratio of at least 4.5:1 (larger text, at least 3:1). For AAA compliance, text should have a ratio of at least 7:1 (larger text, at least 4.5:1)."<sup><a href="#fn6" id="ref6">6</a></sup>
+        The results of 3 color combinations: 1.
+
+        <ol>
+          <li>
+            Brightness Difference: (>= 125) 255
+          </li>
+          <li>
+            Colour Difference: (>= 500) 765
+          </li>
+          <li>
+            Are colours compliant?  YES
+          </li>
+          <li>
+            Contrast Ratio  21
+          </li>
+          <li>
+            WCAG 2 AA Compliant YES
+          </li>
+          <li>
+            WCAG 2 AA Compliant (18pt+) YES
+          </li>
+          <li>
+            WCAG 2 AAA Compliant  YES
+          </li>
+          <li>
+            WCAG 2 AAA Compliant (18pt+)  YES
+          </li>
+        </ol>
+        2. <ol>
+          <li>
+            Brightness Difference: (>= 125) 255
+          </li>
+          <li>
+            Colour Difference: (>= 500) 765
+          </li>
+          <li>
+            Are colours compliant?  YES
+          </li>
+          <li>
+            Contrast Ratio  21
+          </li>
+          <li>
+            WCAG 2 AA Compliant YES
+          </li>
+          <li>
+            WCAG 2 AA Compliant (18pt+) YES
+          </li>
+          <li>
+            WCAG 2 AAA Compliant  YES
+          </li>
+          <li>
+            WCAG 2 AAA Compliant (18pt+)  YES
+          </li>
+        </ol>
+        3. <ol>
+          <li>
+            Brightness Difference: (>= 125) 178.755
+          </li>
+          <li>
+            Colour Difference: (>= 500) 510
+          </li>
+          <li>
+            Are colours compliant?  YES
+          </li>
+          <li>
+            Contrast Ratio  3.998
+          </li>
+          <li>
+            WCAG 2 AA Compliant NO
+          </li>
+          <li>
+            WCAG 2 AA Compliant (18pt+) YES
+          </li>
+          <li>
+            WCAG 2 AAA Compliant  NO
+          </li>
+          <li>
+            WCAG 2 AAA Compliant (18pt+)  NO
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>Mobile native applications have higher performance as they are developed, using different programming languages depends on the mobile operating system. IOS platform - Objective-C, Swift languages; Android apps in Java, Kotlin. As a result, the native applications are more efficient because of better performance, higher speed, in comparison to web applications, and are compiled by APIs and "native" mobile platform programming language.
+        </p>
+      </li>
+      <li>
+        <p>
+          The general idea behind internalization might sound simple at first, making the person quickly consider it as an obvious part of the software they are working on however it is a long well without the end. The number of exceptions and unique cases when it comes to writing, calendar, time zones and daylight savings, names and addresses grow exponentially as you expand your project to more cultures. The need to be cognizant of the realistic limitations of internalization are crucial for the proper implementation of it. Often such system has to be very limited, or otherwise, the development time would be expended for ridiculous time and the benefit from it would be only felt by the few while the costs of the development would hurt everyone. Internalization is a concept that sounds perfect on paper however is it a daunting task in real life and has to be undertaken carefully. <br />
+          While adapting for another culture, region or language the first thing that is usually considered in the local writing system. Changing systems such that they support Unicode from ASCII can be a very difficult and time-consuming task if realized late into the development. It may also be needed to support other legacy character sets and encodings. It may seem to a naked eye that we are nearing the end of internalization however this is only the beginning. There are many other factors to consider. One of them being how Unicode based encodings can store the same text using a different combination of characters. This disruption needs also to be taken into account while programming systems such as sorting or passing of text. However, the issues with language don't end there. Some writing systems require special support. Many of the Asian languages can be written vertically which needs to be fully supported and preferably work in conjunction with traditional typesetting options. Text alignment and justification methods are different for those writing systems and again can be different for scripts like Thai and Tibetan. Not only standard alphabet has to be taken into account but also elements like emphasis, annotations and list numberings may vary from language to language. Languages from the middle-east are uniquely known for their mix of right-to-left and left-to-right text on the same line. Whenever the text is rendered is has to properly represent the direction of text throughout the document or system. Added to that there are not so obvious changes in different cultures such as symbols. The check mark means correct in many counties however in places like Japan it can be understood as incorrect. Outside of writing system, Japanese localization would also require conversion of such symbols to be properly understood by a group of people its aimed for.<br />
+          As mentioned before the problem is not limited to the writing system but also things such as calendars and time zones. In those cases especially the number of exceptions becomes countless and things can very quickly spiral out of control. The most important aspect of internalization is keeping everything in check and being able to realistically plan the possible scope of such a system.
+        </p>
+      </li>
+      <li>
+        <p>
+          IP address of www.few.vu.nl:130.37.164.154<br />
+          IP address of www.cs.vu.nl: 130.37.164.154 (the same as www.few.vu.nl)<br />
+          The IP becomes known to both source and receiver during the exchange of data. Using this knowledge the IP of a website can be obtained through Command Prompt (Windows) while establishing the connection to a website and requesting some information from it. The command used to get the desired information is: tracert [URL of the website].
+        </p>
+      </li>
+      <li>
+        <p>
+          IPv6 is the latest version of the Internet Protocol, which is used to identify every device on the internet such that they can be located. Every individual device that is using the internet has to have such IP address. With the rapid expansion of the internet from the 2000s onward it could have clearly been expected that certain systems within the internet will need to be replaced by better version due to the rising demand. Since the internet operates through the system of locating the source and receiver, and because of the limited nature of 1s and 0s, the number of possible ways to uniquely identify a device is steadily reaching its breaking point. IPv4 has been created with the capability of having 4.3 billion unique addresses. That number is a hard limitation on how the system has been created and in case that limit is reached a brand new solution needs to be implemented. <br />
+          In 1998 IETF has realized that and created the new version, the IPv6. The main feature of that version is the ability to store 340 trillion unique IP addresses and by that eliminating, for now, the fear of the limited number of IP addresses. However, that was not the only thing that has changed. NAT, Network address translation, is a tool which allows the division between private and public IP addresses which in turn allow a lot of devices to be represented by a single IP address outside of the local network. With the very limited space for IP's, that was a crucial part of IPv4. With IPv6 the number of IP addresses is so "limitless" that such method will not be required. Last, but not least, IPv6 also has simplified the header by moving all the unnecessary information and options to the end of the IPv6 header. That way the information contained in the first part of the header is adequate for a Router to take routing decision which in turn allow the quicker connection between source and receiver. <br />
+          The price of IPv4 addresses is said to peak in 2018 and they will drop after the deployment of IPv6 passes 50%. According to Google, the world has 20% to 22% IPv6 adoption, however, in the US it is about 32%. With the continuing increase in demand for bandwidth and latency, the change to IPv6 seems like an obvious decision to take immediately, however such huge structual changed to take a long time. Fortunately, everything points to the future where IPv6 will be dominant which is definitely good news for everyday end users. 
+        </p>
+      </li>
+      <li>
+        The most common subtypes of type text are:
+        <ul>
+          <li>
+            text/plain
+          </li>
+          <li>
+            text/html
+          </li>
+          <li>
+            text/css
+          </li>
+          <li>
+            text/javascript
+          </li>
+          <li>
+            text/markdown
+          </li>
+        </ul>
+        Website: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types is the most authorative source we found that provides the complete list of MIME types.
+      </li>
+      <li>
+        <p>
+          The sixth HTTP method that was presented in the blog post<sup><a href="#fn7" id="ref7">7</a></sup> is called HEAD. HEAD is very similar to GET, however, there is a difference - HEAD does not have a response body. "The convention has been established that the GET and HEAD methods SHOULD NOT have the significance of taking an action other than retrieval. These methods ought to be considered "safe". This allows user agents to represent other methods in a special way so that the user is made aware of the fact that a possibly unsafe action is being requested." The authoritative source: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+        </p>
+      </li>
+      <li>
+        bc9041de
+      </li>
+    </ol>
+    <h1>Preparation Questions LAB3</h1>
+    <ol>
+      <li>
+        After writing appropriate code in index.html using script tag we loaded in the webpage to see the contents of the console. We are using Google Chrome so we chose: options->more tools->Developer tools. Under the Console catergory we can find the outputs from console.log
+      </li>
+      <li>
+        <pre>
+<body onload="myFunction()">
+    <script>
+      function myFunction() {
+        document.body.style.backgroundColor = "red";
+      }
+    </script>
+        </pre>
+      </li>
+      <li>
+        Q3
+      </li>
+      <li>
+        Q4
+      </li>
+      <li>
+        Q5
+      </li>
+      <li>
+        Q6
+      </li>
+      <li>
+        Q7
+      </li>
+      <li>
+        Q8
+      </li>
+      <li>
+        Q9
+      </li>
+      <li>
+        Q10
+      </li>
+    </ol>
+    <h1>Preparation Questions LAB4</h1>
+    <ol>
+      <li>
+        Q1:
+      </li>
+      <li>
+        Q2
+      </li>
+      <li>
+        Q3
+      </li>
+      <li>
+        Q4
+      </li>
+      <li>
+        Q5
+      </li>
+      <li>
+        Q6
+      </li>
+      <li>
+        Q7
+      </li>
+      <li>
+        Q8
+      </li>
+      <li>
+        Q9
+      </li>
+      <li>
+        Q10
+      </li>
+    </ol>
+		<hr></hr>
+		<pre>
+<sup id="fn1">1. <a href="https://www.w3.org/WWW/">https://www.w3.org/WWW/</a></sup>
+<sup id="fn2">2. <a href="http://www.cs.ucsb.edu/~almeroth/classes/F04.176A/handouts/history.html">http://www.cs.ucsb.edu/~almeroth/classes/F04.176A/handouts/history.html</a></sup>
+<sup id="fn3">3. <a href="https://www.w3.org/People/Berners-Lee/">https://www.w3.org/People/Berners-Lee/</a></sup>
+<sup id="fn4">4. <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></sup>
+<sup id="fn5">5. <a href="https://www.facebook.com">https://www.facebook.com</a></sup>
+<sup id="fn6">6. <a href="http://snook.ca/technical/colour_contrast/colour.html">http://snook.ca/technical/colour_contrast/colour.html</a></sup>
+		</pre>
+	</body>
+</html>

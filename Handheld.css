@@ -1,0 +1,187 @@
+body {
+  margin: 0px;
+  background-color: Cornsilk;
+}
+
+div.Start {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 48px;
+}
+div.Start .title {
+  flex: 1;
+  margin: 0px auto;
+  text-transform: capitalize;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 800%;
+}
+div.Start .quote {
+  flex: 0;
+  margin: 0px auto;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 250%;
+}
+
+nav {
+  overflow: hidden;
+  background-color: rgb(55, 55, 55);
+}
+nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 26px 28px;
+  text-decoration: none;
+  font-size: 32px;
+}
+nav a.about {
+  float: right;
+}
+nav a:link {
+  background-color: rgb(55, 55, 55)
+}
+nav a:visited {
+  background-color: rgb(102, 0, 102);
+}
+nav a:hover {
+  background-color: rgb(23, 39, 39);
+}
+nav a:active {
+  background-color: rgb(102, 204, 255)
+}
+
+h2.ListsTitle {
+  border-bottom: 1px solid rgb(177, 166, 166);
+  border-top: 1px solid rgb(177, 166, 166);
+  margin: 50px auto;
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+  font-size: 70px;
+}
+
+section.Lists ul {
+  margin: 25px auto 0px;
+  width: 70%;
+  font-size: 38px;
+  list-style-image: url("https://www.fasten.it/img/icon_16_pointer.png");
+  list-style-type: none;
+  list-style-position: outside;
+}
+section.Lists ul li ol {
+  list-style: decimal-leading-zero outside none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+section.Lists ul li dl dd {
+  font-size: 80%;
+}
+
+p.ShopNote {
+  margin: 0px auto 10px;
+  padding: 25px 0px;
+  width: 90%;
+  text-align: justify;
+  text-indent: 48px;
+  font-size: 40px;
+}
+
+pre.BigQuote {
+  padding-top: 40px;
+  margin: 0px auto 25px;
+  width: 80%;
+  border-style: solid;
+  border-color: red green blue yellow;
+  color: rgb(26, 6, 53);
+  text-align: center;
+  text-transform: capitalize;
+  font-style: italic;
+  font-family: "Times New Roman";
+  font-size: 60px;
+  font-weight: bold;
+  font-variant: normal;
+}
+
+caption.TableCaption {
+  border-bottom: 3px solid rgb(177, 166, 166);
+  border-top: 3px solid rgb(177, 166, 166);
+  margin: 25px auto;
+  width: 80%;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 60px;
+}
+
+img {
+  border-radius: 8px;
+}
+
+td figure {
+  background-image: url("https://www.deko.ee/media/deko/.product-image/thumbnail/product/www.erply.net/3344-fd40049__copy_.jpg");
+  background-repeat: repeat;
+}
+
+input:focus {
+  background-color: yellow;
+}
+
+div.submitButton {
+  text-align: center;
+}
+#submitbtn {
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+table tr td figure img {
+  vertical-align: baseline;
+}
+
+.column1 {
+  padding-top: 40px;
+  overflow: hidden;
+  display: table;
+  margin: 0px auto;
+}
+.column1 table {
+  caption-side: top;
+}
+.column1 table tr {
+  font-size: 30px;
+}
+.column1:after {
+  padding: 40px 0px;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column2 {
+  overflow: hidden;
+  display: table;
+  margin: 0px auto;
+}
+.column2 table {
+  caption-side: top;
+  border-style: none;
+  border-spacing: 15px;
+}
+.column2 table tr {
+  font-size: 40px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div.jump {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 40px;
+}
