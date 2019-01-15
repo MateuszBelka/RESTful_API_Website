@@ -28,6 +28,14 @@
 				}
 			}
 		</script>
+		<script>
+			function resetDatabase() {
+				var xhttp = new XMLHttpRequest();
+				//make sure nothing should be here
+				xhttp.open("GET", "https://wt.ops.labs.vu.nl/api19/bc9041de/reset", true);
+  			xhttp.send();
+			}
+		</script>
 	</head>
 
 	<body>
@@ -114,9 +122,14 @@ delivered to you today!
             <td><input type="url" name="image" form="my_form" required/></td>
           </tr>
         </table>
-        <div class="submitButton">
-          <button type="submit" form="my_form" id="submitbtn">Submit</button>
-        </div>
+				<div>
+	        <span class="submitButton">
+	          <button type="submit" form="my_form" id="submitbtn">Submit</button>
+	        </span>
+					<span class="resetButton">
+						<button type"button" onclick="resetButton()">Reset</button>
+					</span>
+				</div>
 			</div>
       <div class="column2">
         <table class="myTable2">
@@ -153,63 +166,6 @@ delivered to you today!
 		</div>
 	</body>
 </html>
+
 <!--
-<script>
-	function sortTable(n) {
-		var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-		table = document.getElementById("myTable");
-		switching = true;
-		dir = "asc";
-		while (switching) {
-			switching = false;
-			rows = table.rows;
-			for (i = 1; i < (rows.length - 1); i++) {
-				shouldSwitch = false;
-				x = rows[i].getElementsByTagName("TD")[n];
-				y = rows[i + 1].getElementsByTagName("TD")[n];
-				if (dir == "asc") {
-					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-						shouldSwitch= true;
-						break;
-					}
-				} else if (dir == "desc") {
-					if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-						shouldSwitch = true;
-						break;
-					}
-				}
-			}
-			if (shouldSwitch) {
-				rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-				switching = true;
-				switchcount ++;
-			} else {
-				if (switchcount == 0 && dir == "asc") {
-					dir = "desc";
-					switching = true;
-				}
-			}
-		}
-	}
-</script>
--->
-
-<!--  <button type="button" onclick="reset()">Reset</button>
-			<p id="reset"></p>
-
-<script>
-function reset() {
-	$.ajax({
-
-})
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("POST", "demo_post.asp", true);
-  xhttp.send();
-}
-</script>
 -->
