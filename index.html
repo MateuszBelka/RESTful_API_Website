@@ -11,15 +11,21 @@
     	$( "#button" ).on( "click", function() {
       	if ( state ) {
         	$( "#effect" ).animate({
-          	backgroundColor: "#aa0000",
-          	color: "#fff",
-          	width: 500
+          	color: "Green",
+						font-size: "150%",
+						margin: "25px auto",
+					  width: "40%",
+					  padding: "10px",
+					  text-align: "center"
         	}, 1000 );
 	      } else {
 	        $( "#effect" ).animate({
-	          backgroundColor: "#fff",
-	          color: "#000",
-	          width: 240
+						color: "Black",
+						font-size: "100%",
+						margin: "25px auto",
+					  width: "40%",
+					  padding: "10px",
+					  text-align: "center"
 	        }, 1000 );
 	      }
 	      state = !state;
@@ -41,7 +47,7 @@
 			<a class="about" href="index-about.html">About</a>
 		</nav>
     <section class="Lists">
-			
+
 			<div class="toggler">
 				<div id="effect">
 					<h2 class="ListsTitle">
