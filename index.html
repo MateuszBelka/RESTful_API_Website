@@ -3,6 +3,9 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="Screen.css">
 		<title>Grocery Delivery</title>
+
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script>
 			function sortTable(n, tableClass) {
 				var table, rows, switching, i, x, y, shouldSwitch, switchcount = 0;
@@ -34,11 +37,16 @@
 				//make sure nothing should be here
 				xhttp.open("GET", "https://wt.ops.labs.vu.nl/api19/bc9041de/reset", true);
   			xhttp.send();
+				$( function() {
+    			$( "#dialog" ).dialog();
+  			} );
 			}
 		</script>
 	</head>
 
 	<body>
+		<div id="dialog" title="Reset notification">Successful reset!</div>
+
 		<div class="Start">
 			<span class="title">Grocery Delivery</span>
 			<span class="quote">Working from 10<abbr title="before noon">AM </abbr>till 11<abbr title="after noon">PM</abbr> everyday.</span>
