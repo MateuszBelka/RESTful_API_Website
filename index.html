@@ -6,24 +6,26 @@
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script>
-			$(function() {
-				var state = true;
-				$("#specialButton").on("click", function() {
-					if (state == true) {
-						$("#specialEffect").animate({
-							font-size: 150%,
-							color: "#ff3300"
-						}, 1000);
-					} else {
-						$("#specialEffect").animate({
-							font-size: 100%,
-							color: "Black"
-						}, 1000);
-					}
-					state = !state;
-				});
-			});
-		</script>
+  	$( function() {
+    	var state = true;
+    	$( "#button" ).on( "click", function() {
+      	if ( state ) {
+        	$( "#effect" ).animate({
+          	backgroundColor: "#aa0000",
+          	color: "#fff",
+          	width: 500
+        	}, 1000 );
+	      } else {
+	        $( "#effect" ).animate({
+	          backgroundColor: "#fff",
+	          color: "#000",
+	          width: 240
+	        }, 1000 );
+	      }
+	      state = !state;
+	    });
+	  } );
+  	</script>
 	</head>
 
 	<body>
@@ -39,15 +41,15 @@
 			<a class="about" href="index-about.html">About</a>
 		</nav>
     <section class="Lists">
-		<div>
-			<div id="specialEffect">
-			  <h2 class="ListsTitle">
-	        Why should you choose us?
-	      </h2>
+			
+			<div class="toggler">
+				<div id="effect">
+					<h2 class="ListsTitle">
+			      Why should you choose us?
+			    </h2>
+				</div>
 			</div>
-		</div>
-
-		<button id="specialButton">Toggle effect</button>
+			<button id="button">Toggle Effect</button>
 
 			<ul>
 				<li>
