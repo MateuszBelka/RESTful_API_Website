@@ -33,11 +33,11 @@
 		</script>
 		<script>
 			function resetDatabase() {
-				alert("Successful reset!");
 				var xhttp = new XMLHttpRequest();
 				//make sure nothing should be here
 				xhttp.open("GET", "https://wt.ops.labs.vu.nl/api19/bc9041de/reset", true);
   			xhttp.send();
+				alert("Successful reset!");
 			}
 		</script>
 	</head>
@@ -131,7 +131,7 @@ delivered to you today!
 	          <button type="submit" form="my_form" id="submitbtn">Submit</button>
 	        </span>
 					<span class="resetButton">
-						<button type"button" onclick="resetButton()">Reset</button>
+						<button type="button" onclick="resetButton()">Reset</button>
 					</span>
 				</div>
 			</div>
