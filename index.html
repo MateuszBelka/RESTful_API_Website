@@ -46,8 +46,8 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function()  {
 					if (this.readyState == 4 && this.status == 200) {
-						alert("getDatabase works!");
-	     			putJSONinTable(this.responseJSON);
+						var jsonResponse = JSON.parse(this.responseText);
+	     			putJSONinTable(jsonResponse);
 	    		}
 				}
 				xhttp.open("GET","https://wt.ops.labs.vu.nl/api19/bc9041de",true);
@@ -56,9 +56,8 @@
 
 			function putJSONinTable(data) {
 				var i, table = "";
-				var obj = JSON.parse(data);
-				console.log(JSON.stringify(obj));
-				var count = Object.keys(obj).length;
+				console.log(JSON.stringify(data));
+				var count = Object.keys(data).length;
 				for (i = 0; i < count; i++) {
 					table += "<tr><td>" + data.product[i]+ "</td><td>" + data.origin[i] +
 					"</td><td>" + data.best_before_date[i] + "</td><td>" + data.amount[i] +
