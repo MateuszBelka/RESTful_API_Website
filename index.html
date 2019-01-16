@@ -54,11 +54,10 @@
 				xhttp.send();
 			}
 
-			function putJSONinTable(datatmp) {
+			function putJSONinTable(data) {
 				var i, table = "";
-				var data = JSON.stringify(datatmp);
-				console.log(JSON.stringify(datatmp));
-				var count = Object.keys(datatmp).length;
+				console.log(JSON.stringify(data));
+				var count = Object.keys(data).length;
 				for (i = 0; i < count; i++) {
 					table += "<tr><td>" + data.product[i]+ "</td><td>" + data.origin[i] +
 					"</td><td>" + data.best_before_date[i] + "</td><td>" + data.amount[i] +
