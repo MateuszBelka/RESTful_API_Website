@@ -56,7 +56,7 @@
 
 			function putJSONinTable(datatmp) {
 				var i, table = "";
-				var data = JSON.parse(datatmp);
+				var data = JSON.stringify(datatmp);
 				console.log(JSON.stringify(datatmp));
 				var count = Object.keys(datatmp).length;
 				for (i = 0; i < count; i++) {
