@@ -57,8 +57,8 @@
 			function putJSONinTable(data) {
 				var i, table = "";
 				var obj = JSON.parse(data);
-				console.log(JSON.stringify(data));
-				var count = Object.keys(data).length;
+				console.log(JSON.stringify(obj));
+				var count = Object.keys(obj).length;
 				for (i = 0; i < count; i++) {
 					table += "<tr><td>" + data.product[i]+ "</td><td>" + data.origin[i] +
 					"</td><td>" + data.best_before_date[i] + "</td><td>" + data.amount[i] +
