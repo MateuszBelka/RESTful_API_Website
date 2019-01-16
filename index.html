@@ -41,12 +41,12 @@
 		</script>
 		<script>
 		$(document).ready(function() {
+			alert("This works!!!");
 			fillTable();
 		})
 		</script>
 		<script>
 			function fillTable() {
-				alert("This works!!!");
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function()  {
 					if (this.readyState == 4 && this.status == 200) {
@@ -57,13 +57,13 @@
 				xhttp.send();
 			}
 			function putJSONinTable(data) {
-				var i, x = "";
-				for (i = 0; i < data.products.length; i++) {
-					x += "<tr><td>" + x.[i].product + "</td><td>" + x.[i].origin +
-					"</td><td>" + x.[i].best_before_date + "</td><td>" + x.[i].amount +
-					"</td><td>"	+ x.[i].image + "</td></tr>";
+				var i, table = "";
+				for (i = 0; i < data.length; i++) {
+					table += "<tr><td>" + data.[i].product + "</td><td>" + data.[i].origin +
+					"</td><td>" + data.[i].best_before_date + "</td><td>" + data.[i].amount +
+					"</td><td>"	+ data.[i].image + "</td></tr>";
       	}
-				document.getElementById("body").innerHTML = x;
+				document.getElementById("body").innerHTML = table;
 			}
 		</script>
 	</head>
