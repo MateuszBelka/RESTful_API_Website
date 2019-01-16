@@ -39,8 +39,33 @@
 				alert("Successful reset!");
 			}
 		</script>
+		<script>
+		$(document).ready(function() {
+			fillTable();
+		})
+		</script>
+		<script>
+			function fillTable() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function()  {
+					if (this.readyState == 4 && this.status == 200) {
+     				putJSONinTable(this.responseJSON);
+    			}
+				}
+				xhttp.open("GET","https://wt.ops.labs.vu.nl/api19/bc9041de",true);
+				xhttp.send();
+			}
+			function putJSONinTable(data) {
+				var i, x = "";
+				for (i = 0; i < data.products.length; i++) {
+					x += "<tr><td>" + x.[i].product + "</td><td>" + x.[i].origin +
+					"</td><td>" + x.[i].best_before_date + "</td><td>" + x.[i].amount +
+					"</td><td>"	+ x.[i].image + "</td></tr>";
+      	}
+				document.getElementById("body").innerHTML = x;
+			}
+		</script>
 	</head>
-
 	<body>
 		<div class="Start">
 			<span class="title">Grocery Delivery</span>
@@ -89,13 +114,18 @@ delivered to you today!
         <form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form"></form>
         <table class="myTable1">
         <caption class="TableCaption">Bestsellers</caption>
-          <tr>
-            <th onclick="sortTable(0, 'myTable1')">Product</th>
-            <th onclick="sortTable(1, 'myTable1')">Origin</th>
-            <th>Best Before Date</th>
-            <th>Amount</th>
-            <th>Image</th>
-          </tr>
+					<thead>
+          	<tr>
+            	<th onclick="sortTable(0, 'myTable1')">Product</th>
+            	<th onclick="sortTable(1, 'myTable1')">Origin</th>
+            	<th>Best Before Date</th>
+            	<th>Amount</th>
+            	<th>Image</th>
+          	</tr>
+					</thead>
+					<tbody id = "body">
+					</tbody>
+
           <tr>
             <td><input type="text" name="product" form="my_form" required/></td>
             <td><input type="text" name="origin" form="my_form" required/></td>
