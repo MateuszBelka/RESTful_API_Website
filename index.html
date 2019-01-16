@@ -9,7 +9,7 @@
 		<script>
 			$( document ).ready(function() {
 				alert(".ready works!");
-				fillTable();
+				getDatabase();
 			});
 
 			function sortTable(n, tableClass) {
@@ -43,7 +43,7 @@
 				alert("Successful reset!");
 			}
 
-			function fillTable() {
+			function getDatabase() {
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function()  {
 					if (this.readyState == 4 && this.status == 200) {
@@ -56,8 +56,8 @@
 
 			function putJSONinTable(data) {
 				var i, table = "";
-				var count = Object.keys(data).length;
-				for (i = 0; i < count; i++) {
+				// var count = Object.keys(data).length;
+				for (i = 0; i < data.size(); i++) {
 					table += "<tr><td>" + data.product[i]+ "</td><td>" + data.origin[i] +
 					"</td><td>" + data.best_before_date[i] + "</td><td>" + data.amount[i] +
 					"</td><td>"	+ data.image[i] + "</td></tr>";
