@@ -9,11 +9,8 @@
 		<script>
 			$( document ).ready(function() {
 				getDatabase();
-			});
-
-			$(document).ready(function() {
-				$(#my_form).click(function(event) {
-					event.preventDefault();
+				$('#my_form input[id="submitbtn"]').on('click', function(e){
+    			e.preventDefault();
 				});
 			});
 
