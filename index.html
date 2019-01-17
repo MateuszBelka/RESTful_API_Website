@@ -9,7 +9,15 @@
 		<script>
 			$( document ).ready(function() {
 				getDatabase();
+				$("#my_form").submit(function(e){
+    			e.preventDefault();
+  			});
 			});
+			/* works but prevents button from working at allow
+			$('form').on('submit', function(e){
+				e.preventDefault();
+			});
+			*/
 
 
 			function sortTable(n, tableClass) {
@@ -113,9 +121,9 @@ delivered to you today!
 		<div class="row">
 			<div class="column1">
 				<!--<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>-->
-        <form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form"></form>
         <table class="myTable1">
-        <caption class="TableCaption">Bestsellers</caption>
+					<form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form"></form>
+        	<caption class="TableCaption">Bestsellers</caption>
 					<thead>
           	<tr>
             	<th onclick="sortTable(0, 'myTable1')">Product</th>
@@ -125,7 +133,7 @@ delivered to you today!
             	<th>Image</th>
           	</tr>
 					</thead>
-					<tbody id = "body"></tbody>
+					<tbody id="body"></tbody>
           <tr>
             <td><input type="text" name="product" form="my_form" required/></td>
             <td><input type="text" name="origin" form="my_form" required/></td>
@@ -133,15 +141,21 @@ delivered to you today!
             <td><input type="text" name="amount" form="my_form" required/></td>
             <td><input type="url" name="image" form="my_form" required/></td>
           </tr>
+					<tr>
+						<td><button type="submit" form="my_form" id="submitbtn">Submit</button></td>
+						<td><button onclick="resetDatabase()">Reset</button></td>
+					</tr>
         </table>
+				<!--
 				<div>
 	        <span class="submitButton">
-	          <button type="submit" form="my_form" id="submitbtn">Submit</button>
+
 	        </span>
 					<span class="resetButton">
-						<button onclick="resetDatabase()">Reset</button>
+
 					</span>
 				</div>
+				-->
 			</div>
       <div class="column2">
         <table class="myTable2">
