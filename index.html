@@ -9,8 +9,9 @@
 		<script>
 			$( document ).ready(function() {
 				getDatabase();
-				$("#my_form").submit(function(e){
-    			e.preventDefault();
+				$("#my_form").submit(function(event){
+    			event.preventDefault();
+
   			});
 			});
 			/* works but prevents button from working at allow
@@ -122,7 +123,7 @@ delivered to you today!
 			<div class="column1">
 				<!--<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>-->
         <table class="myTable1">
-					<form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form"></form>
+
         	<caption class="TableCaption">Bestsellers</caption>
 					<thead>
           	<tr>
@@ -134,17 +135,19 @@ delivered to you today!
           	</tr>
 					</thead>
 					<tbody id="body"></tbody>
-          <tr>
-            <td><input type="text" name="product" form="my_form" required/></td>
-            <td><input type="text" name="origin" form="my_form" required/></td>
-            <td><input type="date" name="best_before_date" form="my_form" required/></td>
-            <td><input type="text" name="amount" form="my_form" required/></td>
-            <td><input type="url" name="image" form="my_form" required/></td>
-          </tr>
-					<tr>
-						<td><button type="submit" form="my_form" id="submitbtn">Submit</button></td>
-						<td><button onclick="resetDatabase()">Reset</button></td>
-					</tr>
+					<form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form">
+	          <tr>
+	            <td><input type="text" name="product" form="my_form" required/></td>
+	            <td><input type="text" name="origin" form="my_form" required/></td>
+	            <td><input type="date" name="best_before_date" form="my_form" required/></td>
+	            <td><input type="text" name="amount" form="my_form" required/></td>
+	            <td><input type="url" name="image" form="my_form" required/></td>
+	          </tr>
+						<tr>
+								<td><button type="submit" id="submitbtn">Submit</button></td>
+								<td><button onclick="resetDatabase()">Reset</button></td>
+						</tr>
+					</form>
         </table>
 				<!--
 				<div>
