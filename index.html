@@ -62,7 +62,7 @@
 				for (var i = 0; i < count; i++) {
 					table += "<tr><td>" + data[i].product + "</td><td>" + data[i].origin +
 					"</td><td>" + data[i].best_before_date + "</td><td>" + data[i].amount +
-					"</td><td>"	+ data[i].image + "</td></tr>";
+					"</td><td><figure><img src=&quot;"	+ data[i].image + "&quot; alt="tmp" width="150" height="150"></figure></td></tr>";
 	      }
 				document.getElementById("body").innerHTML = table;
 			}
