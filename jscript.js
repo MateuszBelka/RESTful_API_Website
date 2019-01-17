@@ -31,7 +31,7 @@
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://wt.ops.labs.vu.nl/api19/bc9041de/reset", true);
     xhttp.send();
-    alert("Successful reset!");
+    getDatabase();
   }
 
   function getDatabase() {
@@ -77,8 +77,10 @@
       data: JSON.stringify(formData),
       complete: function(){
         document.forms['my_form'].reset()
-        Reload();
       }
     });
+    $('table').find('#body').append("<tr><td>" + product + "</td><td>" + origin +
+    "</td><td>" + best_before_date + "</td><td>" + amount +
+    "</td><td><figure><img src="	+ image + " width=150 height=150 ></figure></td></tr>");
     event.preventDefault();
   }
