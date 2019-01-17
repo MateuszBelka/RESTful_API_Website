@@ -9,17 +9,7 @@
 		<script>
 			$( document ).ready(function() {
 				getDatabase();
-				$("#my_form").submit(function(event){
-    			event.preventDefault();
-
-  			});
 			});
-			/* works but prevents button from working at allow
-			$('form').on('submit', function(e){
-				e.preventDefault();
-			});
-			*/
-
 
 			function sortTable(n, tableClass) {
 				var table, rows, switching, i, x, y, shouldSwitch, switchcount = 0;
@@ -74,6 +64,32 @@
 	      }
 				document.getElementById("body").innerHTML = table;
 			}
+
+			function submitFunction() {
+				var product = $("#product").val();
+  			var origin = $("#origin").val();
+  			var best_before_date = $("#best_before_date").val();
+  			var amount = $("#amount").val();
+  			var image = $("#image").val();
+  			var formData = {product: product, origin: origin, best_before_date: best_before_date, amount: amount, image: image};
+				/*if(IsEmpty(product)&& IsEmpty(origin)&&IsEmpty(best_before_date)&&IsEmpty(amount)&&IsEmpty(image)){
+  			}else{
+    			alert("Please fill in all fields");
+    			event.preventDefault();
+    			return;
+  			}*/
+				$.ajax({
+    			url: 'https://wt.ops.labs.vu.nl/api19/bc9041de',
+    			type: "POST",
+    			contentType: 'application/json',
+    			data: JSON.stringify(formData),
+    			complete: function(){
+      			document.forms['my_form'].reset()
+      			Reload();
+					}
+    		});
+				event.preventDefault();
+			}
 		</script>
 	</head>
 	<body>
@@ -121,9 +137,7 @@ delivered to you today!
 	  </pre>
 		<div class="row">
 			<div class="column1">
-				<!--<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>-->
         <table class="myTable1">
-
         	<caption class="TableCaption">Bestsellers</caption>
 					<thead>
           	<tr>
@@ -137,28 +151,18 @@ delivered to you today!
 					<tbody id="body"></tbody>
 					<form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form">
 	          <tr>
-	            <td><input type="text" name="product" form="my_form" required/></td>
-	            <td><input type="text" name="origin" form="my_form" required/></td>
-	            <td><input type="date" name="best_before_date" form="my_form" required/></td>
-	            <td><input type="text" name="amount" form="my_form" required/></td>
-	            <td><input type="url" name="image" form="my_form" required/></td>
+	            <td><input type="text" name="product" id="product" form="my_form" required/></td>
+	            <td><input type="text" name="origin" id="origin" form="my_form" required/></td>
+	            <td><input type="date" name="best_before_date" id="best_before_date" form="my_form" required/></td>
+	            <td><input type="text" name="amount" id="amount" form="my_form" required/></td>
+	            <td><input type="url" name="image" id="image" form="my_form" required/></td>
 	          </tr>
 						<tr>
-								<td><button type="submit" id="submitbtn">Submit</button></td>
+								<td><button type="submit" id="submitbtn" onclick="submitFunction()">Submit</button></td>
 								<td><button onclick="resetDatabase()">Reset</button></td>
 						</tr>
 					</form>
         </table>
-				<!--
-				<div>
-	        <span class="submitButton">
-
-	        </span>
-					<span class="resetButton">
-
-					</span>
-				</div>
-				-->
 			</div>
       <div class="column2">
         <table class="myTable2">
