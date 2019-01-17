@@ -1,3 +1,4 @@
+// TODO: updating without reloading page
 <!DOCTYPE html>
 <html>
 	<head>
@@ -72,12 +73,12 @@
   			var amount = $("#amount").val();
   			var image = $("#image").val();
   			var formData = {product: product, origin: origin, best_before_date: best_before_date, amount: amount, image: image};
-				/*if(IsEmpty(product)&& IsEmpty(origin)&&IsEmpty(best_before_date)&&IsEmpty(amount)&&IsEmpty(image)){
+				if( product && origin && best_before_date && amount && image){
   			}else{
     			alert("Please fill in all fields");
     			event.preventDefault();
     			return;
-  			}*/
+  			}
 				$.ajax({
     			url: 'https://wt.ops.labs.vu.nl/api19/bc9041de',
     			type: "POST",
