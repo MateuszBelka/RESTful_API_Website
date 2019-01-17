@@ -57,11 +57,15 @@
 			function putJSONinTable(data) {
 				var table = "";
 				console.log(JSON.stringify(data));
+				console.log("does product work?")
+				console.log('data.product[0]');
+				console.log("does origin work?");
+				console.log('data.product[0]');
 				var count = Object.keys(data).length;
 				for (var i = 0; i < count; i++) {
-					table += "<tr><td>" '+ data.product[i]+' "</td><td>" + data.origin[i] +
-					"</td><td>" + data.best_before_date[i] + "</td><td>" + data.amount[i] +
-					"</td><td>"	+ data.image[i] + "</td></tr>";
+					table += "<tr><td>" + 'data.product[i]' + "</td><td>" + 'data.origin[i]' +
+					"</td><td>" + 'data.best_before_date[i]' + "</td><td>" + 'data.amount[i]' +
+					"</td><td>"	+ 'data.image[i]' + "</td></tr>";
 	      }
 				document.getElementById("body").innerHTML = table;
 			}
