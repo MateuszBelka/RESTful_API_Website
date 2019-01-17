@@ -9,10 +9,8 @@
 		<script>
 			$( document ).ready(function() {
 				getDatabase();
-				$('#my_form input[id="submitbtn"]').on('click', function(e){
-    			e.preventDefault();
-				});
 			});
+
 
 			function sortTable(n, tableClass) {
 				var table, rows, switching, i, x, y, shouldSwitch, switchcount = 0;
@@ -114,6 +112,7 @@ delivered to you today!
 	  </pre>
 		<div class="row">
 			<div class="column1">
+				<!--<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>-->
         <form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form"></form>
         <table class="myTable1">
         <caption class="TableCaption">Bestsellers</caption>
