@@ -58,9 +58,7 @@
 				var table = "";
 				console.log(JSON.stringify(data));
 				console.log("does product work?");
-				console.log(data[0][product]);
-				console.log("does origin work?");
-				console.log(data[0]["origin"]);
+				console.log(data[product]);
 				var count = Object.keys(data).length;
 				for (var i = 0; i < count; i++) {
 					table += "<tr><td>" + 'data.product[i]' + "</td><td>" + 'data.origin[i]' +
