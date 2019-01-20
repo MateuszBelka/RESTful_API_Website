@@ -14,7 +14,7 @@
         shouldSwitch = false;
         x = rows[i].getElementsByTagName("TD")[n];
         y = rows[i + 1].getElementsByTagName("TD")[n];
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        if (x.innerHTML.toString().toLowerCase() > y.innerHTML.toString().toLowerCase()) {
           shouldSwitch= true;
           break;
         }
