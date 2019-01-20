@@ -341,7 +341,7 @@
         JavaScript in the browser uses event-driven programming model. HTML events are "things" that happen to the HTML elements and JavaScript can use this information to react upon noticing it. Event handlers (listeners) allow JavaScript to do exactly that. Making an action based on the detection of an event in HTML element.
       </li>
       <li>
-        Q9
+        The Place Autocomplete service is a web service that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.<sup><a href="#fn7" id="ref7">7</a></sup>
       </li>
       <li>
         <pre>
@@ -394,7 +394,18 @@
 	        	According to the result of our function, we can see that almost all the common words are stop words or pronouns and that does not show all the diversity in the language. So, having the list of the actually most used nouns, adjectives and so on, we will be able to see the real vocabulary that the author used in his composition.
 	      	</li>
 	      	<li>
-	        	Following the definition of Zipf's law as presented to students through lecture slides, "Alice in the Wonderland" does follow Zipf's law. By that it is meant that the frequency matrix of words does follow the following rule: "the frequency of a word is inversely proportional to its rank in the frequency table.". Strictly speaking there is no way of providing an equation which would perfectly connect all the points of data in an inversely proportional manner however the results are close enough to accept the random error in empirical data and conclude that data presented to us from "Alice in the Wonderland" follows Zipf's law.
+						<p>
+		        	Following the definition of Zipf's law as presented to students through lecture slides, "Alice in the Wonderland" does follow Zipf's law. By that it is meant that the frequency matrix of words does follow the following rule: "the frequency of a word is inversely proportional to its rank in the frequency table.". Strictly speaking there is no way of providing an equation which would perfectly connect all the points of data in an inversely proportional manner however the results are close enough to accept the random error in empirical data and conclude that data presented to us from "Alice in the Wonderland" follows Zipf's law.<br/>
+							By error I meant that if the results truly followed the Zipf's law they would go as such:
+							<pre>
+1644*1	=	1644
+872*2		=	1744
+729*3		=	2187
+632*4		=	2528
+595*5		=	2975
+							</pre>
+							, however as the graph presents the general behaviour and priciple of relative difference between the top 30 is preserved.
+						</p>
 	      	</li>
 	      	<li>
 	        	Following the definition of Heaps' law as presented to students through lecture slices, "Alice in the Wonderland" does follow Heaps' law. By that is meant that as larger parts of the source material as analyzed, fewer new words are found. That concludes in a data structure where the small piece of text has a lot of unique words while large pieces of text have a lot of them repeating, meaning proportionally less unique words compared to the size of the text.
@@ -405,19 +416,24 @@
 				&nbsp;
       	<ol class="alphabet">
 	      	<li>
-						TF means "Term Frequency" and TF-IDF
+						TF-IDF is  a technique that consists of TF and IDF. TF - Term's Frequency and IDF - Inverse Document Frequency. The higher the TF-IDF score, the rarer the word in the text. We checked words "creature" and "footman". "Creature" was met 4 times amd its weight is from 1.3 to 2.59, depends on the chapter. "Footman" was met 14 times and its weight is 6.95. After manually check, we came to the conclusion that the precision and recall are high because both variants are correctly counted by the program.
 	      	</li>
 					<li>
-	        	Matthew
+	        	In TFIDF matrix the program not only has to evaluate how often a word is found in the text but also the frequency at which said word is found. The amount of computation needed is therefore increased and because of that the time it takes to acquire TFIDF matrix.
 	      	</li>
 	      	<li>
-	        	Matthew
+						<p>
+		        	TF-based search presents information about the total number of times a word is found in the text while TFIDF search shows the weight of the word in the document based on how we exactly define it. TFIDF provides more detailed information about the words in the document hence we believe it is of higher quality than only TF-based search.<br/>
+							There is always precision/recall tradeoff. If one is increased the other one is decresed.
+							TF: Since stop words will be counted as important precision will be low however recall will be good as stop words do not exclude proper matches.<br/>
+							TFIDF
+						</p>
 	      	</li>
 	      	<li>
-	        	PLACEHOLDER
+						TF will show 5 most common words from the text. TF-IDF will show us the 5 most weighted"(=important) words in the text.
 	      	</li>
 	      	<li>
-	      		PLACEHOLDER
+	      		Recall might increase since its function is to show the percentage of total relevant results correctly classified by the program.
 	      	</li>
     		</ol>
 			</li>
@@ -430,6 +446,7 @@
 <sup id="fn4">4. <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></sup>
 <sup id="fn5">5. <a href="https://www.facebook.com">https://www.facebook.com</a></sup>
 <sup id="fn6">6. <a href="http://snook.ca/technical/colour_contrast/colour.html">http://snook.ca/technical/colour_contrast/colour.html</a></sup>
+<sup id="fn7">7. <a href="https://developers.google.com/places/web-service/autocomplete">https://developers.google.com/places/web-service/autocomplete</a></sup>
 		</pre>
 	</body>
 </html>
