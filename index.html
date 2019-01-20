@@ -65,23 +65,8 @@ delivered to you today!
           	</tr>
 					</thead>
 					<tbody id="body"></tbody>
-					<!--
-					<form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form">
-	          <tr>
-	            <td><input type="text" name="product" id="product" form="my_form" required/></td>
-	            <td><input type="text" name="origin" id="origin" form="my_form" required/></td>
-	            <td><input type="date" name="best_before_date" id="best_before_date" form="my_form" required/></td>
-	            <td><input type="text" name="amount" id="amount" form="my_form" required/></td>
-	            <td><input type="url" name="image" id="image" form="my_form" required/></td>
-	          </tr>
-						<tr>
-								<td><button type="submit" id="submitbtn" onclick="submitFunction()">Submit</button></td>
-								<td><button onclick="resetDatabase()">Reset</button></td>
-						</tr>
-					-->
 					</form>
         </table>
-				<!-- test -->
 				<form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form">
 				<div>
 					<input type="text" name="product" id="product" form="my_form" required/>
@@ -92,9 +77,8 @@ delivered to you today!
 				</div>
 				<div>
 					<button type="submit" id="submitbtn" onclick="submitFunction()">Submit</button>
-					<button onclick="resetDatabase()">Reset</button>
+					<button type="button" onclick="resetDatabase()">Reset</button>
 				</div>
-				<!-- end of test -->
 			</div>
       <div class="column2">
         <table class="myTable2">
