@@ -29,7 +29,7 @@
 
   function resetDatabase() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://wt.ops.labs.vu.nl/api19/bc9041de/reset", true); //http://localhost:8080/reset
+    xhttp.open("GET", "http://localhost:8080/reset", true);
     xhttp.send();
     getDatabase();
   }
@@ -42,7 +42,7 @@
         putJSONinTable(jsonResponse);
       }
     }
-    xhttp.open("GET","https://wt.ops.labs.vu.nl/api19/bc9041de",true);  //http://localhost:8080/
+    xhttp.open("GET","http://localhost:8080/retrieve",true);
     xhttp.send();
   }
 
@@ -52,7 +52,7 @@
     for (var i = 0; i < count; i++) {
       table += "<tr><td>" + data[i].product + "</td><td>" + data[i].origin +
       "</td><td>" + data[i].best_before_date + "</td><td>" + data[i].amount +
-      "</td><td><figure><img src="	+ data[i].image + " width=150 height=150 ></figure></td></tr>";
+      "</td><td><figure><img src=" + data[i].image + " width=150 height=150 ></figure></td></tr>";
     }
     document.getElementById("body").innerHTML = table;
   }

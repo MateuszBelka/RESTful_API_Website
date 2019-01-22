@@ -32,10 +32,10 @@ def database(db):
     db.execute("SELECT * FROM inventory")
     products = db.fetchall()
 
-    if (products == []):
+    if (not products):
         response.status_code = 404
         response.content_type = 'application/json'
-        response_body = {'Status': 'Not Found', 'message': 'The requested product is not found in the database.'}
+        response_body = {'Status': 'Not Found', 'message': 'The database is empty.'}
 
     else:
         response.status_code = 200
@@ -48,7 +48,7 @@ def database(db):
 
 @get('/retrieve/<id>')
 def database(db, id):
-    db.execute('SELECT * FROM inventory WHERE id = {}'.format(id))
+    db.execute('SELECT * FROM inventory WHERE id = {}'.format(id))#check syntax
     products = db.fetchall()
 
     if (products == []):
@@ -59,7 +59,7 @@ def database(db, id):
     else:
         response.status_code = 200
         response.content_type = 'application/json'
-        response_body = products[0]
+        response_body = products[0]#if somehow multiple items with same id are in products, select the first one
 
     response.body = json.dumps(response_body)
     return response
@@ -79,15 +79,16 @@ def database(db):
         response_body = {'Status': 'Bad Request', 'message': 'The product does not include enough parameters.'}
 
     else:
-        db.execute(INSERT INTO inventory (product, origin, best_before_date, amount, image), VALUES(?, ?, ?, ?, ?), (product, origin, best_before_date, amount, image))
-        id = db.lastrowid
-        host = request.get_header('host')
+        db.execute(INSERT INTO inventory (product, origin, best_before_date, amount, image), VALUES(?, ?, ?, ?, ?), (product, origin, best_before_date, amount, image))#write your own version
+        id = db.lastrowid#explain
+        host = request.get_header('host')#explain
         response.status_code = 201
         response.content_type = 'application/json'
-        response_body = {'url': 'http://{}/products/{}'.format(host,id)}
+        response_body = {'url': 'http://{}/products/{}'.format(host,id)}#understand syntax
 
     response.body = json.dumps(response_body)
     return response
+    
 @put('/update/<id>')
 
 
