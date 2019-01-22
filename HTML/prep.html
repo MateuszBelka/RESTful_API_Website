@@ -398,13 +398,13 @@
 		        	Following the definition of Zipf's law as presented to students through lecture slides, "Alice in the Wonderland" does follow Zipf's law. By that it is meant that the frequency matrix of words does follow the following rule: "the frequency of a word is inversely proportional to its rank in the frequency table.". Strictly speaking there is no way of providing an equation which would perfectly connect all the points of data in an inversely proportional manner however the results are close enough to accept the random error in empirical data and conclude that data presented to us from "Alice in the Wonderland" follows Zipf's law.<br/>
 							By error I meant that if the results truly followed the Zipf's law they would go as such:
 							<pre>
-1644*1		=	1644
-872*2		=	1744
-729*3		=	2187
-632*4		=	2528
-595*5		=	2975
+1644*1  =  1644
+872*2   =  1744
+729*3   =  2187
+632*4   =  2528
+595*5   =  2975
 							</pre>
-							however as the graph presents the general behaviour and priciple of relative difference between the top 30 is preserved.
+							however as the graph presents the general behaviour and principle of relative difference between the top 30 is preserved.
 						</p>
 	      	</li>
 	      	<li>
@@ -441,6 +441,7 @@
 		<h1>Preparation Questions LAB5</h1>
 			<ol>
 				<li>
+					&nbsp;
 					<ol>
 						<li>
 							Idempotence, in this context, means that the side-effects of identical requests is the same as for a single request. GET method is idempotent.
@@ -454,6 +455,8 @@
 						<li>
 							Usually, proxy caches idempotent requests and, as we mentioned eairlier, the visitor counter requires dynamic updates and changes. That might lead to safety confusion and wrong output.
 						</li>
+					</ol>
+				<li>
 					Stateless protocol is a protocol in which every communication is handled as an independent event, unrelated to other similar communications.
 					There is no communication state (stateless)
 HTTP response should not depend on previous request
@@ -463,25 +466,52 @@ Other methods should be idempotent: requesting the same resource multiple times 
 REST simplifies global design and improves performance …
 but sometimes makes server programming more difficult
 need for extra features (cookies)
-
 				</li>
 				<li>
-					Q3
+					<p>
+						Since web servers have no memory they are using specialized messages, cookies, which are stored on user's computers hard drive to store information such as login information but also for example shopping basket. This message exchange allows the server to know about previous activities done by user without having to set up memory system alongside the web server.<br/>
+						In the specific scenario of shopping basket, every time the user initiates an activity which is supposed to have an effect onto the shopping basket the server sends a message in a form of cookie to the users browser and later the browser sends that cookie back whenever the server needs to know the status of the shopping basket again. This way the server can easily get information about the state of the shopping basket without having to maintain memory.
+					</p>
 				</li>
 				<li>
-					Q4
+					<table>
+						<tr>
+							<th>Company</th>
+							<th>endpoint</th>
+							<th>HTTP method</th>
+							<th>response format</th>
+							<th>HTTP response codes</th>
+						</tr>
+						<tr>
+							<td>Twitter</td>
+							<td><pre>https://api.twitter.com/1.1/statuses/user_timeline.json</pre></td>
+							<td>GET</td>
+							<td>JSON</td>
+							<td>PLACEHOLDER</td>
+						</tr>
+						<tr>
+							<td>Spotify</td>
+							<td><pre>https://api.spotify.com/v1/albums/{id}</pre></td>
+							<td>GET</td>
+							<td>JSON</td>
+							<td>PLACEHOLDER</td>
+						</tr>
+					</table>
 				</li>
 				<li>
-					Q5
+					The response that we receive after OPTIONS request informs us about other HTTP method that can be used on that URL. They are: GET, POST, PUT, DELETE, OPTIONS. The origin from which we can make those requests is "*" which means any number of characters which means that there is no limit to origin.
 				</li>
 				<li>
-					Q6
+					Everything is as expected. Content-Type is JSON which we expected since coding in JavaScript. The answer has all the information that we want it to have in order to properly operate in our framework.
 				</li>
 				<li>
-					Q7
+					After Auto Reloading is enabled it means that whenever the file which is responsible for running the server is updated, the browser webpage can be reloaded and it will display the updated information. In case any error is introducted it will also be visible if it will be activated after reloading the webpage.
 				</li>
 				<li>
-					Q8
+					<p>
+						Servers which use templates are preferable in cases of processes that the users computer might experience problems such as lack of computational power. Large, complex opertation might be better to be left for server to tackle because otherwise user will have negative experience with the system which can be avoided.<br/>
+						Dynamically creating elements of the webpage on the clients side is preferable in situations in which the output of the operation is vast and clients bandwidth is slow. Even in case of smaller sizes of message the user might be expecting to have immediate response from the website and latency might negatively affect users experience. Running code on clients side prevents those problems.
+					</p>
 				</li>
 			</ol>
 		<h1>Preparation Questions LAB5</h1>

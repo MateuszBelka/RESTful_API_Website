@@ -29,7 +29,7 @@
 
   function resetDatabase() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://wt.ops.labs.vu.nl/api19/bc9041de/reset", true);
+    xhttp.open("GET", "https://wt.ops.labs.vu.nl/api19/bc9041de/reset", true); //http://localhost:8080/reset
     xhttp.send();
     getDatabase();
   }
@@ -42,7 +42,7 @@
         putJSONinTable(jsonResponse);
       }
     }
-    xhttp.open("GET","https://wt.ops.labs.vu.nl/api19/bc9041de",true);
+    xhttp.open("GET","https://wt.ops.labs.vu.nl/api19/bc9041de",true);  //http://localhost:8080/
     xhttp.send();
   }
 
@@ -71,7 +71,7 @@
       return;
     }
     $.ajax({
-      url: 'https://wt.ops.labs.vu.nl/api19/bc9041de',
+      url: 'https://wt.ops.labs.vu.nl/api19/bc9041de', //
       type: "POST",
       contentType: 'application/json',
       data: JSON.stringify(formData),

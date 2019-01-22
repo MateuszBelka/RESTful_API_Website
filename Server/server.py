@@ -16,7 +16,7 @@
 # Include more methods/decorators as you use them
 # See http://bottle.readthedocs.org/en/stable/api.html#bottle.Bottle.route
 
-from bottle import response, error, get, create, put, delete
+from bottle import response, error, get, post, put, delete, request
 import json
 
 
@@ -28,21 +28,73 @@ import json
 ###############################################################################
 
 @get('/retrieve')
+def database(db):
+    db.execute("SELECT * FROM inventory")
+    products = db.fetchall()
+
+    if (products == []):
+        response.status_code = 404
+        response.content_type = 'application/json'
+        response_body = {'Status': 'Not Found', 'message': 'The requested product is not found in the database.'}
+
+    else:
+        response.status_code = 200
+        response.content_type = 'application/json'
+        response_body = products
+
+    response.body = json.dumps(response_body)
+    return response
 
 
-@get('/retrieve/<rownumber>')
+@get('/retrieve/<id>')
+def database(db, id):
+    db.execute('SELECT * FROM inventory WHERE id = {}'.format(id))
+    products = db.fetchall()
 
+    if (products == []):
+        response.status_code = 404
+        response.content_type = 'application/json'
+        response_body = {'Status': 'Not Found', 'message': 'The requested product is not found in the database.'}
 
-@create('/create')
+    else:
+        response.status_code = 200
+        response.content_type = 'application/json'
+        response_body = products[0]
 
+    response.body = json.dumps(response_body)
+    return response
 
-@put('/update/<rownumber>')
+@post('/create')
+def database(db):
+
+    product = request.json.get('product')
+    origin = request.json.get('origin')
+    best_before_date = request.json.get('best_before_date')
+    amount = request.json.get('amount')
+    image = request.json.get('image')
+
+    if (not product or not origin or not best_before_date or not amount or not image):
+        response.status_code = 404
+        response.content_type = 'application/json'
+        response_body = {'Status': 'Bad Request', 'message': 'The product does not include enough parameters.'}
+
+    else:
+        db.execute(INSERT INTO inventory (product, origin, best_before_date, amount, image), VALUES(?, ?, ?, ?, ?), (product, origin, best_before_date, amount, image))
+        id = db.lastrowid
+        host = request.get_header('host')
+        response.status_code = 201
+        response.content_type = 'application/json'
+        response_body = {'url': 'http://{}/products/{}'.format(host,id)}
+
+    response.body = json.dumps(response_body)
+    return response
+@put('/update/<id>')
 
 
 @delete('/reset')
 
 
-@delete('/reset)
+
 
 
 
