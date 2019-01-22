@@ -16,7 +16,7 @@
 # Include more methods/decorators as you use them
 # See http://bottle.readthedocs.org/en/stable/api.html#bottle.Bottle.route
 
-from bottle import response, error, get
+from bottle import response, error, get, create, put, delete
 import json
 
 
@@ -76,8 +76,7 @@ import json
 if __name__ == "__main__":
     from bottle import install, run
     from wtplugin import WtDbPlugin, WtCorsPlugin
-    
+
     install(WtDbPlugin())
     install(WtCorsPlugin())
     run(host='localhost', port=8080, reloader=True, debug=True, autojson=False)
-
