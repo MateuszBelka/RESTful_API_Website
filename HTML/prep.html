@@ -455,6 +455,15 @@
 							Usually, proxy caches idempotent requests and, as we mentioned eairlier, the visitor counter requires dynamic updates and changes. That might lead to safety confusion and wrong output.
 						</li>
 					Stateless protocol is a protocol in which every communication is handled as an independent event, unrelated to other similar communications.
+					There is no communication state (stateless)
+HTTP response should not depend on previous request
+HTTP GET method should be safe: no side-effects
+HTTP POST should be used when multiple identical requests have a different effect than a single request
+Other methods should be idempotent: requesting the same resource multiple times will yield the same result and no further side effects as a single request
+REST simplifies global design and improves performance …
+but sometimes makes server programming more difficult
+need for extra features (cookies)
+
 				</li>
 				<li>
 					Q3
