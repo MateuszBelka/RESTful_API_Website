@@ -443,15 +443,18 @@
 				<li>
 					<ol>
 						<li>
-							Idempotence, in this context, means that the side-effects of identical requests is the same as for a single request.
+							Idempotence, in this context, means that the side-effects of identical requests is the same as for a single request. GET method is idempotent.
 						</li>
 						<li>
 							HTTP caching is available for idempotent results as the outcome will always be the same. That means that the request can be repeated automatically.
 						</li>
 						<li>
-
+							We can see visitor statistics by using GET method, which is is idemponent. However, visitor counters might "break the system" due to the nature of being non-idempotent(changing) and it might lead to safety hesitation.
 						</li>
-					Q2
+						<li>
+							Usually, proxy caches idempotent requests and, as we mentioned eairlier, the visitor counter requires dynamic updates and changes. That might lead to safety confusion and wrong output.
+						</li>
+					Stateless protocol is a protocol in which every communication is handled as an independent event, unrelated to other similar communications.
 				</li>
 				<li>
 					Q3
