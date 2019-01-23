@@ -71,7 +71,7 @@
       return;
     }
     $.ajax({
-      url: 'https://wt.ops.labs.vu.nl/api19/bc9041de', //
+      url: 'http://localhost:8080/retrieve/create',
       type: "POST",
       contentType: 'application/json',
       data: JSON.stringify(formData),
