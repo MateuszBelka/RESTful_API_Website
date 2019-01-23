@@ -16,9 +16,10 @@
 # Include more methods/decorators as you use them
 # See http://bottle.readthedocs.org/en/stable/api.html#bottle.Bottle.route
 
-from bottle import response, error, get, post, put, delete, request
+from bottle import response, error, get, post, put, delete, request, HTTPResponse
 import json
-
+#import bottle
+#from bottle.ext import sqlite
 
 ###############################################################################
 # Routes
@@ -36,6 +37,17 @@ def database(db):
         response.status_code = 404
         response.content_type = 'application/json'
         response_body = {'Status': 'Not Found', 'message': 'The database is empty.'}
+        '''
+    if products:
+        response.content_type = 'application/json'
+        result = json.dumps(products)
+        return bottle.HTTPResponse(Status=200, body=result)
+    else:
+        response.content_type = 'application/json'
+        response_body = {'Status': 'Not Found', 'Message': 'The database is empty.'}
+        return HTTPError(404, Not Found)
+
+    '''
 
     else:
         response.status_code = 200
@@ -106,8 +118,11 @@ def database(db):
 # TODO (optional):
 #       Add sensible error handlers for all errors that may occur when a user
 #       accesses your API.
-###############################################################################
-
+###############################################################################@error(404)
+@error(404)
+def error404(error):
+    response.content_type = 'application/json'
+    return json.dumps({'Error':  {'Status': error.status_code, 'message': error.status_line}})
 
 ###############################################################################
 # This starts the server
