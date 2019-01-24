@@ -29,69 +29,64 @@ import json
 ###############################################################################
 
 @get('/retrieve')
-def retrieve(db):
-    db.execute("SELECT * FROM supermarket")
-    products = db.fetchall()
 
-    if (products):
-        response.status_code = 200
-        response.content_type = 'application/json'
-        response_body = products
-    else:
-        response.status_code = 404
-        response.content_type = 'application/json'
-        response_body = {'status': 'Not Found', 'message': 'The database is empty.'}
+#def retrieve(db):
+#    items = db.execute("SELECT * FROM supermarket").fetchall()
+#
+#    if items:
+#        response.status = 200
+#        response.content_type = 'application/json'
+#        response_body = items
+#    else:
+#        response.status = 404
+#        response.content_type = 'application/json'
+#        response_body = {'status': 'Not Found', 'message': 'The database is empty.'}
+#
+#    response.body = json.dumps(response_body)
+#    return response
 
-    response.body = json.dumps(response_body)
-    return response
+
+def retrieve_db(db):
+    db.execute("SELECT product, origin, best_before_date, amount, image FROM supermarket")
+    names = db.fetchall()
+    database = json.dumps(names)
+    response.set_header('content-type', 'application/json')
+    response.add_header('Access-Control-Allow-Origin', '*')
+    response.add_header('Allow', 'GET, HEAD')
+    return database
 
 @get('/retrieve/<id>')
 def retrieveItem(db, id):
-    item = db.execute('SELECT * FROM supermarket WHERE id = {}'.format(id)).fetchone()
+    item = db.execute('SELECT * FROM supermarket WHERE id = ?', (id)).fetchone()
     if item:
-        response.status_code = 200
+        response.status = 200
         response.content_type = 'application/json'
         response_body = item
     else:
-        response.status_code = 404
+        response.status = 404
         response.content_type = 'application/json'
         response_body = {'status': 'Not Found', 'message': 'The database is empty.'}
 
     response.body = json.dumps(response_body)
     return response
 
-'''new version
-def retrieveItem(db, id):
-    item = db.execute('SELECT * FROM supermarket WHERE id = {}'.format(id)).fetchone()
-    if item:
-        response.status_code = 200
-        response.content_type = 'application/json'
-        response.body = json.dumps(item)
-        return response
-    return HTTPError(404, 'Not Found: The database is empty.')
-'''
 @post('/create')
 def create(db):
 
-    product = requests.get('product')
-    product.json()
-    origin = requests.get('origin')
-    origin.json()
-    best_before_date = requests.get('best_before_date')
-    best_before_date.json()
-    amount = requests.get('amount')
-    amount.json()
-    image = requests.get('image')
-    image.json()
+    product = request.json.get('product')
+    origin = request.json.get('origin')
+    best_before_date = request.json.get('best_before_date')
+    amount = request.json.get('amount')
+    image = request.json.get('image')
 
     if (product and origin and best_before_date and amount and image):
-        db.execute('INSERT INTO supermarket (product, origin, best_before_date, amount, image) VALUES (%s, %s, %s, %s, %s), (product, origin, best_before_date, amount, image)')
-        id = db.last_insert_rowid()
-        response.status_code = 200
+        db.execute('INSERT INTO supermarket (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)', (product, origin, best_before_date, amount, image))
+        id = db.lastrowid
+        response.status = 200
         response.content_type = 'application/json'
         response_body = {'url': 'http://localhost:8080/products/{}'.format(id)}
     else:
-        response.status_code = 400
+        response.status = 400
         response.content_type = 'application/json'
         response_body = {'status': 'Bad Request', 'message': 'You are missing elements in your request.'}
 
@@ -116,16 +111,15 @@ def update(db, id):
 
         item = db.execute('SELECT * FROM supermarket WHERE id = {}'.format(id)).fetchone()
         if item:
-            db.execute('UPDATE supermarket SET product = ?, origin = ?, best_before_date = ?, amount = ?, image = ? WHERE id = ?', (product, origin, best_before_date, amount, image, id))
-            response.status_code = 200
+            response_body = db.execute('UPDATE supermarket SET product = ?, origin = ?, best_before_date = ?, amount = ?, image = ? WHERE id = ?', (product, origin, best_before_date, amount, image, id)).fetchone()
+            response.status = 200
             response.content_type = 'application/json'
-            response_body = db.fetchall()
         else:
-            response.status_code = 404
+            response.status = 404
             response.content_type = 'application/json'
             response_body = {'status': 'Not Found', 'message': 'Item you are looking for could not be found.'}
     else:
-        response.status_code = 400
+        response.status = 400
         response.content_type = 'application/json'
         response_body = {'status': 'Bad Request', 'message': 'You are missing elements in your request.'}
 
@@ -134,14 +128,14 @@ def update(db, id):
 
 @delete('/delete/<id>')
 def delete(db, id):
-    item = db.execute('SELECT * FROM supermarket WHERE id = {}'.format(id)).fetchone()
+    item = db.execute('SELECT * FROM supermarket WHERE id = ?', (id)).fetchone()
     if item:
         db.execute('DELETE FROM supermarket WHERE id = ?', (id))
-        response.status_code = 204
+        response.status = 204
         response.content_type = 'application/json'
         response.body = ''
     else:
-        response.status_code = 400
+        response.status = 400
         response.content_type = 'application/json'
         response_body = {'status': 'Bad Request', 'message': 'You are missing elements in your request.'}
         response.body = json.dumps(response_body)
@@ -163,7 +157,7 @@ def delete(db, id):
 @error(404)
 def error404(error):
     response.content_type = 'application/json'
-    response.body = json.dumps({'Error':  {'status': error.status_code, 'message': error.status_line}})
+    response.body = json.dumps({'Error':  {'status': error.status, 'message': error.status_line}})
     return response
 
 ###############################################################################
@@ -190,18 +184,3 @@ if __name__ == "__main__":
     install(WtDbPlugin())
     install(WtCorsPlugin())
     run(host='localhost', port=8080, reloader=True, debug=True, autojson=False)
-
-
-    '''
-        if (not products):
-            response.status_code = 404
-            response.content_type = 'application/json'
-            response_body = {'Status': 'Not Found', 'Message': 'The database is empty.'}
-        else:
-            response.status_code = 200
-            response.content_type = 'application/json'
-            response_body = products
-
-        response.body = json.dumps(response_body)
-        return response
-    '''

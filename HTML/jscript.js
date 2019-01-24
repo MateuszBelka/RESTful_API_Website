@@ -71,7 +71,7 @@
       return;
     }
     $.ajax({
-      url: 'http://localhost:8080/retrieve/create',
+      url: 'http://localhost:8080/create',
       type: "POST",
       contentType: 'application/json',
       data: JSON.stringify(formData),
