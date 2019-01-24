@@ -118,12 +118,6 @@ def delete(db, id):
         response.body = json.dumps(response_body)
 
     return response
-
-
-
-
-
-
 ###############################################################################
 # Error handling
 #
