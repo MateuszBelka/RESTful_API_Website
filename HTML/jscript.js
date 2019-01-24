@@ -27,11 +27,23 @@
     }
   }
 
-  function resetDatabase() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://localhost:8080/reset", true);
-    xhttp.send();
+  function deleteFunction() {
+    var id = $("#id").val();
+    if(id){
+    }else{
+      alert("Please fill in all fields");
+      event.preventDefault();
+      return;
+    }
+    $.ajax({
+      url: 'http://localhost:8080/delete/' + id,
+      type: 'DELETE',
+      complete: function(){
+        document.forms['my_form'].reset()
+      }
+    });
     getDatabase();
+    event.preventDefault();
   }
 
   function getDatabase() {
@@ -72,7 +84,7 @@
     }
     $.ajax({
       url: 'http://localhost:8080/create',
-      type: "POST",
+      type: 'POST',
       contentType: 'application/json',
       data: JSON.stringify(formData),
       complete: function(){
@@ -82,5 +94,32 @@
     $('table').find('#body').append("<tr><td>" + product + "</td><td>" + origin +
     "</td><td>" + best_before_date + "</td><td>" + amount +
     "</td><td><figure><img src="	+ image + " width=150 height=150 ></figure></td></tr>");
+    event.preventDefault();
+  }
+
+  function updateFunction() {
+    var product = $("#product").val();
+    var origin = $("#origin").val();
+    var best_before_date = $("#best_before_date").val();
+    var amount = $("#amount").val();
+    var image = $("#image").val();
+    var id = $("#id").val();
+    var formData = {product: product, origin: origin, best_before_date: best_before_date, amount: amount, image: image, id: id};
+    if( product && origin && best_before_date && amount && image && id){
+    }else{
+      alert("Please fill in all fields");
+      event.preventDefault();
+      return;
+    }
+    $.ajax({
+      url: 'http://localhost:8080/update/' + id,
+      type: "PUT",
+      contentType: 'application/json',
+      data: JSON.stringify(formData),
+      complete: function(){
+        document.forms['my_form'].reset()
+      }
+    });
+    getDatabase();
     event.preventDefault();
   }

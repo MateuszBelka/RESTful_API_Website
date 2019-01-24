@@ -67,17 +67,19 @@ delivered to you today!
 					<tbody id="body"></tbody>
 					</form>
         </table>
-				<form action="https://wt.ops.labs.vu.nl/api19/bc9041de" method="post" id="my_form">
+				<form action="http://localhost:8080/retrieve" method="post" id="my_form">
 				<div>
-					<input type="text" name="product" id="product" form="my_form" required/>
-					<input type="text" name="origin" id="origin" form="my_form" required/>
-					<input type="date" name="best_before_date" id="best_before_date" form="my_form" required/>
-					<input type="text" name="amount" id="amount" form="my_form" required/>
-					<input type="url" name="image" id="image" form="my_form" required/>
+					product-><input type="text" name="product" id="product" form="my_form" />
+					origin-><input type="text" name="origin" id="origin" form="my_form" />
+					best before date-><input type="date" name="best_before_date" id="best_before_date" form="my_form" />
+					amount-><input type="text" name="amount" id="amount" form="my_form" />
+					image-><input type="url" name="image" id="image" form="my_form" />
+					id-><input type="number" name="id" id="id" form="my_form" />
 				</div>
 				<div>
 					<button type="submit" id="submitbtn" onclick="submitFunction()">Submit</button>
-					<button type="button" onclick="resetDatabase()">Reset</button>
+					<button type="button" id="updatebtn" onclick="updateFunction()">Update</button>
+					<button type="button" id="deletebtn" onclick="deleteFunction()">Delete</button>
 				</div>
 			</div>
       <div class="column2">

@@ -29,31 +29,13 @@ import json
 ###############################################################################
 
 @get('/retrieve')
-
-#def retrieve(db):
-#    items = db.execute("SELECT * FROM supermarket").fetchall()
-#
-#    if items:
-#        response.status = 200
-#        response.content_type = 'application/json'
-#        response_body = items
-#    else:
-#        response.status = 404
-#        response.content_type = 'application/json'
-#        response_body = {'status': 'Not Found', 'message': 'The database is empty.'}
-#
-#    response.body = json.dumps(response_body)
-#    return response
-
-
 def retrieve_db(db):
-    db.execute("SELECT product, origin, best_before_date, amount, image FROM supermarket")
-    names = db.fetchall()
-    database = json.dumps(names)
-    response.set_header('content-type', 'application/json')
+    items = db.execute("SELECT product, origin, best_before_date, amount, image, id FROM supermarket").fetchall()
+    response.content_type = 'application/json'
     response.add_header('Access-Control-Allow-Origin', '*')
     response.add_header('Allow', 'GET, HEAD')
-    return database
+    response.body = json.dumps(items)
+    return response
 
 @get('/retrieve/<id>')
 def retrieveItem(db, id):
@@ -84,7 +66,7 @@ def create(db):
         id = db.lastrowid
         response.status = 200
         response.content_type = 'application/json'
-        response_body = {'url': 'http://localhost:8080/products/{}'.format(id)}
+        response_body = {'url': 'http://localhost:8080/retrieve/{}'.format(id)}
     else:
         response.status = 400
         response.content_type = 'application/json'
@@ -96,16 +78,11 @@ def create(db):
 @put('/update/<id>')
 def update(db, id):
 
-    product = requests.get('product')
-    product.json()
-    origin = requests.get('origin')
-    origin.json()
-    best_before_date = requests.get('best_before_date')
-    best_before_date.json()
-    amount = requests.get('amount')
-    amount.json()
-    image = requests.get('image')
-    image.json()
+    product = request.json.get('product')
+    origin = request.json.get('origin')
+    best_before_date = request.json.get('best_before_date')
+    amount = request.json.get('amount')
+    image = request.json.get('image')
 
     if (product and origin and best_before_date and amount and image):
 
