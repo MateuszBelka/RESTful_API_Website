@@ -86,7 +86,7 @@ def update(db, id):
 
     if (product and origin and best_before_date and amount and image):
 
-        item = db.execute('SELECT * FROM supermarket WHERE id = {}'.format(id)).fetchone()
+        item = db.execute('SELECT * FROM supermarket WHERE id = ?', (id)).fetchone()
         if item:
             response_body = db.execute('UPDATE supermarket SET product = ?, origin = ?, best_before_date = ?, amount = ?, image = ? WHERE id = ?', (product, origin, best_before_date, amount, image, id)).fetchone()
             response.status = 200
@@ -107,7 +107,7 @@ def update(db, id):
 def delete(db, id):
     item = db.execute('SELECT * FROM supermarket WHERE id = ?', (id)).fetchone()
     if item:
-        db.execute('DELETE FROM supermarket WHERE id = ?', (id))
+        db.execute('DELETE * FROM supermarket WHERE id = ?', (id))
         response.status = 204
         response.content_type = 'application/json'
         response.body = ''
