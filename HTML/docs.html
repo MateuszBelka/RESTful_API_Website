@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <style>
-h2 {
+h3 {
   text-align: center;
+  font-size: 50px;
 }
 title {
   font-family: "Times New Roman", Times, serif;
@@ -12,6 +13,8 @@ body {
   background-color: Cornsilk
   }
 table, th, td {
+  padding: 5px 10px;
+  background-color: White;
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -37,7 +40,7 @@ div.Description {
   <title>API Documentation</title>
 </head>
 <body>
-  <h2>API Documentation</h2>
+  <h3>API Documentation</h3>
   <table align="center">
     <tr>
       <th>Method</th>
@@ -80,7 +83,7 @@ div.Description {
     <h1 class="Method">GET method</h1>
     <h2 class="What_Does"> /retrieve </h2>
     <div class="Description">
-      <p> Gets all products from the supermarket database and returns 200 when items are successfully found.</p>
+      <p><strong>Gets all products from the supermarket database and returns 200 when items are successfully found.</strong></p>
       <p> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}, </p>
       <p>{"origin": "India", "product": "Banana", "amount": "120kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bananas.jpg/640px-Bananas.jpg", "best_before_date": "February 2019", "id":"2"}, </p>
       <p>{"origin": "test", "product": "Test", "amount": "test", "image": "https://rockandresole.com/wp-content/uploads/2017/04/58832_300x300.jpg", "best_before_date": "2019-01-02"}, "id":"3"] </p>
@@ -89,28 +92,28 @@ div.Description {
     <h1 class="Method">GET method</h1>
     <h2 class="What_Does"> /retrieve/&lt;id&gt;</h2>
     <div class="Description">
-      <p> Gets the product from the supermarket database by id and returns 200 when the item is successfully found.</p>
+      <p><strong>Gets the product from the supermarket database by id and returns 200 when the item is successfully found.</strong></p>
       <p> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}] </p>
     </div>
 
     <h1 class="Method">POST method</h1>
     <h2 class="What_Does">/create</h2>
     <div class="Description">
-      <p> Adds product in the supermarket database and returns 200 when the item is successfully added.</p>
+      <p><strong>Adds product in the supermarket database and returns 200 when the item is successfully added.</strong></p>
       <p> { "url": "http://localhost:8080/create" } </p>
     </div>
 
     <h1 class="Method">PUT method</h1>
     <h2 class="What_Does">/update/&lt;id&gt;</h2>
     <div class="Description">
-      <p> Updates information about the product from supermarket database by id and returns 200 when the item is successfully updated.</p>
+      <p><strong>Updates information about the product from supermarket database by id and returns 200 when the item is successfully updated.</strong></p>
       <p class="Description_UPDATE"> [{"origin": "The Netherlands", "product": "Apples", "amount": "50kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "September 2019", "id":"1"}] </p>
     </div>
 
     <h1 class="Method">DELETE method</h1>
     <h2 class="What_Does"> /delete/&lt;id&gt; </h2>
     <div class="Description">
-      <p> Deletes information about the product from supermarket database by id and returns 200 when the item is successfully deleted.</p>
+      <p><strong>Deletes information about the product from supermarket database by id and returns 200 when the item is successfully deleted.</strong></p>
     </div>
 
 </body>
