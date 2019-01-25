@@ -1,6 +1,11 @@
 h3 {
   text-align: center;
   font-size: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border: 2px solid black;
+  margin: 50px auto;
+  width: 50%;
 }
 title {
   font-family: "Times New Roman", Times, serif;
@@ -19,16 +24,23 @@ table, th, td {
 h1.Method {
   font-family: "Times New Roman", Times, serif;
   border-bottom: 1px solid Black;
-  margin: 50px auto;
+  margin: 100px auto 15px;
   width: 40%;
-  padding: 10px;
-  text-align: center;//check how does it work
+  padding: 30px 10px 5px;
+  text-align: center;
+  font-size: 40px;
 }
-h2.What_Does {
+h2.Method {
   font-family: "Times New Roman", Times, serif;
-  padding: 10px 400px;
+  font-size: 20px;
+  text-align: center;
 }
-div.Description {
+p.Description {
+  font-family: "Times New Roman", Times, serif;
+  padding: 60px 400px 20px;
+  font-size: 20px;
+}
+p.Example {
   font-family: "Times New Roman", Times, serif;
   padding: 10px 400px;
 }

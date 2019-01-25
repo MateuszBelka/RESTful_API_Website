@@ -16,7 +16,7 @@
 # Include more methods/decorators as you use them
 # See http://bottle.readthedocs.org/en/stable/api.html#bottle.Bottle.route
 
-from bottle import response, request, error, get, post, put, delete, HTTPResponse
+from bottle import response, request, error, get, post, put, delete
 import json
 
 ###############################################################################
@@ -47,6 +47,8 @@ def retrieveItem(db, id):
         response.content_type = 'application/json'
         response_body = {'status': 'Not Found', 'message': 'The database is empty.'}
 
+    response.add_header('Access-Control-Allow-Origin', '*')
+    response.add_header('Allow', 'GET, HEAD')
     response.body = json.dumps(response_body)
     return response
 
@@ -62,7 +64,7 @@ def create(db):
     if (product and origin and best_before_date and amount and image):
         db.execute('INSERT INTO supermarket (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)', (product, origin, best_before_date, amount, image))
         id = db.lastrowid
-        response.status = 200
+        response.status = 201
         response.content_type = 'application/json'
         response_body = {'url': 'http://localhost:8080/retrieve/{}'.format(id)}
     else:
@@ -70,6 +72,8 @@ def create(db):
         response.content_type = 'application/json'
         response_body = {'status': 'Bad Request', 'message': 'You are missing elements in your request.'}
 
+    response.add_header('Access-Control-Allow-Origin', '*')
+    response.add_header('Allow', 'POST, HEAD')
     response.body = json.dumps(response_body)
     return response
 
@@ -87,7 +91,7 @@ def update(db, id):
         item = db.execute('SELECT * FROM supermarket WHERE id = ?', (id)).fetchone()
         if item:
             response_body = db.execute('UPDATE supermarket SET product = ?, origin = ?, best_before_date = ?, amount = ?, image = ? WHERE id = ?', (product, origin, best_before_date, amount, image, id)).fetchone()
-            response.status = 200
+            response.status = 201
             response.content_type = 'application/json'
         else:
             response.status = 404
@@ -98,6 +102,8 @@ def update(db, id):
         response.content_type = 'application/json'
         response_body = {'status': 'Bad Request', 'message': 'You are missing elements in your request.'}
 
+    response.add_header('Access-Control-Allow-Origin', '*')
+    response.add_header('Allow', 'PUT, HEAD')
     response.body = json.dumps(response_body)
     return response
 
@@ -115,6 +121,8 @@ def delete(db, id):
         response_body = {'status': 'Bad Request', 'message': 'You are missing elements in your request.'}
         response.body = json.dumps(response_body)
 
+    response.add_header('Access-Control-Allow-Origin', '*')
+    response.add_header('Allow', 'DELETE, HEAD')
     return response
 ###############################################################################
 # Error handling

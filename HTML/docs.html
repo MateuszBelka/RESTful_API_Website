@@ -45,41 +45,32 @@
     </tr>
   </table>
 
-    <h1 class="Method">GET method</h1>
-    <h2 class="What_Does"> /retrieve </h2>
-    <div class="Description">
-      <p><strong>Gets all products from the supermarket database and returns 200 when items are successfully found.</strong></p>
-      <p> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}, </p>
-      <p>{"origin": "India", "product": "Banana", "amount": "120kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bananas.jpg/640px-Bananas.jpg", "best_before_date": "February 2019", "id":"2"}, </p>
-      <p>{"origin": "test", "product": "Test", "amount": "test", "image": "https://rockandresole.com/wp-content/uploads/2017/04/58832_300x300.jpg", "best_before_date": "2019-01-02"}, "id":"3"] </p>
+    <h1 class="Method">/retrieve</h1>
+    <h2 class="Method">Method GET</h2>
+      <p class="Description"><strong>Gets all products from the supermarket database and returns 200 when items are successfully found.</strong></p>
+      <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}, </p>
+      <p class="Example">{"origin": "India", "product": "Banana", "amount": "120kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bananas.jpg/640px-Bananas.jpg", "best_before_date": "February 2019", "id":"2"}, </p>
+      <p class="Example">{"origin": "test", "product": "Test", "amount": "test", "image": "https://rockandresole.com/wp-content/uploads/2017/04/58832_300x300.jpg", "best_before_date": "2019-01-02"}, "id":"3"] </p>
     </div>
 
-    <h1 class="Method">GET method</h1>
-    <h2 class="What_Does"> /retrieve/&lt;id&gt;</h2>
-    <div class="Description">
-      <p><strong>Gets the product from the supermarket database by id and returns 200 when the item is successfully found.</strong></p>
-      <p> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}] </p>
-    </div>
+    <h1 class="Method">/retrieve/&lt;id&gt;</h1>
+    <h2 class="Method">Method GET</h2>
+      <p class="Description"><strong>Gets the product from the supermarket database by id and returns 200 when the item is successfully found.</strong></p>
+      <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}] </p>
 
-    <h1 class="Method">POST method</h1>
-    <h2 class="What_Does">/create</h2>
-    <div class="Description">
-      <p><strong>Adds product in the supermarket database and returns 200 when the item is successfully added.</strong></p>
-      <p> { "url": "http://localhost:8080/create" } </p>
-    </div>
+    <h1 class="Method">/create</h1>
+    <h2 class="Method">Method POST</h2>
+      <p class="Description"><strong>Adds product in the supermarket database and returns 201 when the item is successfully added.</strong></p>
+      <p class="Example"> { "url": "http://localhost:8080/create" } </p>
 
-    <h1 class="Method">PUT method</h1>
-    <h2 class="What_Does">/update/&lt;id&gt;</h2>
-    <div class="Description">
-      <p><strong>Updates information about the product from supermarket database by id and returns 200 when the item is successfully updated.</strong></p>
-      <p class="Description_UPDATE"> [{"origin": "The Netherlands", "product": "Apples", "amount": "50kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "September 2019", "id":"1"}] </p>
-    </div>
+    <h1 class="Method">/update/&lt;id&gt;</h1>
+    <h2 class="Method">Method PUT</h2>
+      <p class="Description"><strong>Updates information about the product from supermarket database by id and returns 201 when the item is successfully updated.</strong></p>
+      <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "50kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "September 2019", "id":"1"}] </p>
 
-    <h1 class="Method">DELETE method</h1>
-    <h2 class="What_Does"> /delete/&lt;id&gt; </h2>
-    <div class="Description">
-      <p><strong>Deletes information about the product from supermarket database by id and returns 200 when the item is successfully deleted.</strong></p>
-    </div>
+    <h1 class="Method">/delete/&lt;id&gt;</h1>
+    <h2 class="Method">Method DELETE</h2>
+      <p class="Description"><strong>Deletes information about the product from supermarket database by id and returns 204 when the item is successfully deleted.</strong></p>
 
 </body>
 </html>
