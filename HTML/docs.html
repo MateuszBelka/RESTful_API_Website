@@ -1,43 +1,8 @@
 <!DOCTYPE html>
 <html>
-<style>
-h3 {
-  text-align: center;
-  font-size: 50px;
-}
-title {
-  font-family: "Times New Roman", Times, serif;
-  padding: 10px 50px;
-}
-body {
-  background-color: Cornsilk
-  }
-table, th, td {
-  padding: 5px 10px;
-  background-color: White;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-h1.Method {
-  font-family: "Times New Roman", Times, serif;
-  border-bottom: 1px solid Black;
-  margin: 50px auto;
-  width: 40%;
-  padding: 10px;
-  text-align: center;//check how does it work
-}
-h2.What_Does {
-  font-family: "Times New Roman", Times, serif;
-  padding: 10px 400px;
-}
-div.Description {
-  font-family: "Times New Roman", Times, serif;
-  padding: 10px 400px;
-}
-</style>
 <head>
   <title>API Documentation</title>
+  <link rel="stylesheet" type="text/css" href="css/docs.css"
 </head>
 <body>
   <h3>API Documentation</h3>
@@ -61,13 +26,13 @@ div.Description {
       <th></th>
     </tr>
     <tr>
-      <th>PUT</th>
+      <th>POST</th>
       <th>http://localhost:8080/create</th>
       <th>Adds product in the supermarket database.</th>
       <th>Product, Origin, Best Before Date, Amount, Image</th>
     </tr>
     <tr>
-      <th>POST</th>
+      <th>PUT</th>
       <th>http://localhost:8080/update/&lt;id&gt;</th>
       <th>Updates the product from the supermarket database by id.</th>
       <th>Product, Origin, Best Before Date, Amount, Image</th>
