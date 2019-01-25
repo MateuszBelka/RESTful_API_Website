@@ -18,8 +18,6 @@
 
 from bottle import response, request, error, get, post, put, delete, HTTPResponse
 import json
-#import bottle
-#from bottle.ext import sqlite3
 
 ###############################################################################
 # Routes
