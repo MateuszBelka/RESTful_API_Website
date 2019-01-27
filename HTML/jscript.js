@@ -1,4 +1,3 @@
-
   $( document ).ready(function() {
     getDatabase();
   });
@@ -25,25 +24,6 @@
         switchcount ++;
       }
     }
-  }
-
-  function deleteFunction() {
-    var id = $("#id").val();
-    if(id){
-    }else{
-      alert("Please fill in all fields");
-      event.preventDefault();
-      return;
-    }
-    $.ajax({
-      url: 'http://localhost:8080/delete/' + id,
-      type: 'DELETE',
-      complete: function(){
-        document.forms['my_form'].reset()
-      }
-    });
-    getDatabase();
-    event.preventDefault();
   }
 
   function getDatabase() {
@@ -116,6 +96,25 @@
       type: "PUT",
       contentType: 'application/json',
       data: JSON.stringify(formData),
+      complete: function(){
+        document.forms['my_form'].reset()
+      }
+    });
+    getDatabase();
+    event.preventDefault();
+  }
+
+  function deleteFunction() {
+    var id = $("#id").val();
+    if(id){
+    }else{
+      alert("Please fill in all fields");
+      event.preventDefault();
+      return;
+    }
+    $.ajax({
+      url: 'http://localhost:8080/delete/' + id,
+      type: 'DELETE',
       complete: function(){
         document.forms['my_form'].reset()
       }

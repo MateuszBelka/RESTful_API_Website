@@ -54,7 +54,6 @@ def retrieveItem(db, id):
 
 @post('/create')
 def create(db):
-
     product = request.json.get('product')
     origin = request.json.get('origin')
     best_before_date = request.json.get('best_before_date')
@@ -79,7 +78,6 @@ def create(db):
 
 @put('/update/<id>')
 def update(db, id):
-
     product = request.json.get('product')
     origin = request.json.get('origin')
     best_before_date = request.json.get('best_before_date')
@@ -87,7 +85,6 @@ def update(db, id):
     image = request.json.get('image')
 
     if (product and origin and best_before_date and amount and image):
-
         item = db.execute('SELECT * FROM supermarket WHERE id = ?', (id)).fetchone()
         if item:
             response_body = db.execute('UPDATE supermarket SET product = ?, origin = ?, best_before_date = ?, amount = ?, image = ? WHERE id = ?', (product, origin, best_before_date, amount, image, id)).fetchone()
@@ -111,7 +108,7 @@ def update(db, id):
 def delete(db, id):
     item = db.execute('SELECT * FROM supermarket WHERE id = ?', (id)).fetchone()
     if item:
-        db.execute('DELETE * FROM supermarket WHERE id = ?', (id))
+        db.execute('DELETE FROM supermarket WHERE id = ?', (id))
         response.status = 204
         response.content_type = 'application/json'
         response.body = ''
@@ -130,7 +127,8 @@ def delete(db, id):
 # TODO (optional):
 #       Add sensible error handlers for all errors that may occur when a user
 #       accesses your API.
-###############################################################################@error(404)
+###############################################################################
+
 @error(404)
 def error404(error):
     response.content_type = 'application/json'
