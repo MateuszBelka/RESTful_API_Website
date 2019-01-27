@@ -444,30 +444,30 @@
 					&nbsp;
 					<ol>
 						<li>
-							Idempotence, in this context, means that the side-effects of identical requests is the same as for a single request. GET method is idempotent.
+							Idempotence, in this context, means that the side-effects of identical requests are the same as for a single request. GET method is idempotent.
 						</li>
 						<li>
 							HTTP caching is available for idempotent results as the outcome will always be the same. That means that the request can be repeated automatically.
 						</li>
 						<li>
-							We can see visitor statistics by using GET method, which is is idemponent. However, visitor counters might "break the system" due to the nature of being non-idempotent(changing) and it might lead to safety hesitation.
+							We can see visitor statistics by using the GET method, which is idempotent. However, visitor counters might "break the system" due to the nature of being non-idempotent(changing) and it might lead to safety hesitation.
 						</li>
 						<li>
-							Usually, proxy caches idempotent requests and, as we mentioned eairlier, the visitor counter requires dynamic updates and changes. That might lead to safety confusion and wrong output.
+							Usually, proxy caches idempotent requests and, as we mentioned earlier, the visitor counter requires dynamic updates and changes. That might lead to safety confusion and wrong output.
 						</li>
 					</ol>
 				<li>
-					Stateless protocol(no communication state) is a protocol in which every communication is handled as an independent event, unrelated to other similar communications.
-					HTTP response should not depend on previous request.
-					HTTP GET method should be safe: no side-effects.
-					HTTP POST should be used when multiple identical requests have a different effect than a single request.
-					Other methods should be idempotent: requesting the same resource multiple times will yield the same result and no further side effects as a single request.
-					REST simplifies global design and improves performance.
+					"Stateless protocol(no communication state) is a protocol in which every communication is handled as an independent event, unrelated to other similar communications.
+          HTTP response should not depend on the previous request.
+          HTTP GET method should be safe: no side-effects.
+          HTTP POST should be used when multiple identical requests have a different effect than a single request.
+          Other methods should be idempotent: requesting the same resource multiple times will yield the same result and no further side effects as a single request.
+          REST simplifies global design and improves performance."(lecture slides)
 				</li>
 				<li>
 					<p>
-						Since web servers have no memory they are using specialized messages, cookies, which are stored on user's computers hard drive to store information such as login information but also for example shopping basket. This message exchange allows the server to know about previous activities done by user without having to set up memory system alongside the web server.<br/>
-						In the specific scenario of shopping basket, every time the user initiates an activity which is supposed to have an effect onto the shopping basket the server sends a message in a form of cookie to the users browser and later the browser sends that cookie back whenever the server needs to know the status of the shopping basket again. This way the server can easily get information about the state of the shopping basket without having to maintain memory.
+						Since web servers have no memory they are using specialized messages, cookies, which are stored on user's computers hard drive to store information such as login information but also for example shopping basket. This message exchange allows the server to know about previous activities done by the user without having to set up memory system alongside the web server.<br/>
+            In the specific scenario of shopping basket, every time the user initiates an activity which is supposed to have an effect onto the shopping basket the server sends a message in a form of cookie to the users browser and later the browser sends that cookie back whenever the server needs to know the status of the shopping basket again. This way the server can easily get information about the state of the shopping basket without having to maintain memory.
 					</p>
 				</li>
 				<li>
@@ -496,79 +496,79 @@
 					</table>
 				</li>
 				<li>
-					The response that we receive after OPTIONS request informs us about other HTTP method that can be used on that URL. They are: GET, POST, PUT, DELETE, OPTIONS. The origin from which we can make those requests is "*" which means any number of characters which means that there is no limit to origin.
-				</li>
+        	The response that we receive after OPTIONS request informs us about another HTTP method that can be used on that URL. They are: GET, POST, PUT, DELETE, OPTIONS. The origin from which we can make those requests is "*" which means any number of characters which means that there is no limit to an origin.
+			 </li>
 				<li>
 					Everything is as expected. Content-Type is JSON which we expected since coding in JavaScript. The answer has all the information that we want it to have in order to properly operate in our framework.
 				</li>
 				<li>
-					After Auto Reloading is enabled it means that whenever the file which is responsible for running the server is updated, the browser webpage can be reloaded and it will display the updated information. In case any error is introducted it will also be visible if it will be activated after reloading the webpage.
+					After Auto Reloading is enabled it means that whenever the file which is responsible for running the server is updated, the browser webpage can be reloaded and it will display the updated information. In case any error is introduced it will also be visible if it will be activated after reloading the webpage.
 				</li>
 				<li>
 					<p>
-						Servers which use templates are preferable in cases of processes that the users computer might experience problems such as lack of computational power. Large, complex opertation might be better to be left for server to tackle because otherwise user will have negative experience with the system which can be avoided.<br/>
-						Dynamically creating elements of the webpage on the clients side is preferable in situations in which the output of the operation is vast and clients bandwidth is slow. Even in case of smaller sizes of message the user might be expecting to have immediate response from the website and latency might negatively affect users experience. Running code on clients side prevents those problems.
+						Servers which use templates are preferable in cases of processes that the user's computer might experience problems such as lack of computational power. The large, complex operation might be better to be left for a server to tackle because otherwise, the user will have a negative experience with the system which can be avoided.<br/>
+            Dynamically creating elements of the webpage on the clients' side is preferable in situations in which the output of the operation is vast and clients bandwidth is slow. Even in the case of smaller sizes of message the user might be expecting to have an immediate response from the website and latency might negatively affect users experience. Running code on clients side prevents those problems.
 					</p>
 				</li>
 			</ol>
 		<h1>Preparation Questions LAB6</h1>
 			<ol>
 				<li>
-					"The social analysis of Web science must also deal	with the negative aspects of Web-based social interaction (such as security breaches, identity theft, privacy violations, and the social disruptions of	globalization). The Web produces such dangers because it provides opportunities for those whobreak laws, spread hate, or promote terrorism. These are troubling aspects of the Internet, so a responsible research agenda must include their study."<sup><a href="#fn9" id="ref9">9</a></sup> We believe that these problems cannot be solved by the effort of only Web Scientists or sociologists due do its complexity. Only working together they can find solution to this problem.
+					"The social analysis of Web science must also deal with the negative aspects of Web-based social interaction (such as security breaches, identity theft, privacy violations, and the social disruptions of globalization). The Web produces such dangers because it provides opportunities for those who break laws, spread hate, or promote terrorism. These are troubling aspects of the Internet, so a responsible research agenda must include their study."<sup><a href="#fn9" id="ref9">9</a></sup> We believe that these problems cannot be solved by the effort of only Web Scientists or sociologists due do its complexity. Only working together they can find a solution to this problem.
 				</li>
 				<li>
-					The long tail is a strategy in that allows getting profit by selling "hard-to-find" items in small quantitites to many customers instead of selling big amounts of a reduced number of high-demand items. Long tail is profitable because of its 3 cost-control startegies: promoting the "back" catalog(using recommendation engines), items that take longer time to use and by encouriging customers to put off using their products.
+					The long tail is a strategy that allows getting profit by selling "hard-to-find" items in small quantities to many customers instead of selling big amounts of a reduced number of high-demand items. The long tail is profitable because of its 3 cost-control strategies: promoting the "back" catalogue (using recommendation engines), items that take a longer time to use and by encouraging customers to put off using their products.
 				</li>
 				<li>
 					<ol class="alphabet">
-						<li> Net neutrality is the rule which states that all providers treat all data(websites, users, content) the same way without discrimination. I agree with Sir Tim that net neutrality is one of the most important principles on which whole World-Wide Web should be based on among other.
+						<li> Net neutrality is the rule which states that all providers treat all data(websites, users, content) the same way without discrimination. I agree with Sir Tim that net neutrality is one of the most important principles on which whole World-Wide Web should be based on among others.
 						</li>
-						<li> That gives justice and feeling of equality to people who use Internet and prevent them from dishonesty of providers(slowing down traffic, charge users for content and so on).
+						<li> That gives justice and feeling of equality to people who use the Internet and prevent them from the dishonesty of providers(slowing down traffic, charge users for content and so on).
 						</li>
-						<li> FCC is a Federal Communication Comission that is located in Washington, US. In 2015 European Parliament and Council made a regulation:"Regulation (EU) 2015/2120 of the European Parliament and of the Council of 25 November 2015 laying down measures concerning open internet access and amending Directive 2002/22/EC on universal service and users’ rights relating to electronic communications networks and services and Regulation (EU) No 531/2012 on roaming on public mobile communications networks within the Union." Until that treaty is in force, FCC ruling in US should not affect consumers in  European Union.
+						<li> FCC is a Federal Communication Commission that is located in Washington, US. In 2015 European Parliament and Council made a regulation:"Regulation (EU) 2015/2120 of the European Parliament and of the Council of 25 November 2015 laying down measures concerning open internet access and amending Directive 2002/22/EC on universal service and users’ rights relating to electronic communications networks and services and Regulation (EU) No 531/2012 on roaming on public mobile communications networks within the Union." Until that treaty is in force, FCC ruling in US should not affect consumers in  European Union.
 						</li>
 					</ol>
 				</li>
 				<li>
-					The role of the data.gov(and data.overheid.nl) is to make government data more transparent and accessible to citizens. The potential danger of these websites are lack of privacy and misexplanation of the data presented.
+					The role of the data.gov(and data.overheid.nl) is to make government data more transparent and accessible to citizens. The potential danger of these websites is lack of privacy and misexplanation of the data presented.
 				</li>
 				<li>
 					<ol>
 						<li>
-							Since 2011 there has been a huge search engine optimization. The most popular one, Google, is suitable for use by advanced users and novice ones. The autocorrection system is one of the biggest advances as it is capable of predicting what user is actually trying to look for and suggest it for him. Search engines have also additional functionalities like searching within only specific website or file format but also to force the engine to take into account elements of search query it is trying to avoid by itself (eg. %).
+							Since 2011 there has been a huge search engine optimization. The most popular one, Google, is suitable for use by advanced users and novice ones. The auto-correction system is one of the biggest advances as it is capable of predicting what user is actually trying to look for and suggest it for him. Search engines have also additional functionalities like searching within the only specific website or file format but also to force the engine to take into account elements of search query it is trying to avoid by itself (eg. %).
 						</li>
 						<li>
-							PDF has improved dramatically and from personal experience is a desired file format for browsing specific type of information. I have yet to encounter a poor use of PDF such that I would prefer to see normal html website. PDF have specific use and if they are limited only to that they serve their purpose in World Wide Web. Also the navigation throughout a PDF file is also a non-existent issue in 2019 and a lot of similar features have to improved or introducted to support the use of PDF.
+							PDF has improved dramatically and from personal experience is the desired file format for browsing the specific type of information. I have yet to encounter a poor use of PDF such that I would prefer to see normal HTML website. PDF has a specific use and if they are limited only to that they serve their purpose in the World Wide Web. Also, the navigation throughout a PDF file is also a non-existent issue in 2019 and a lot of similar features have to improve or introduced to support the use of PDF.
 						</li>
 						<li>
-							Changing link colors is an incredibly standard thing that beginners learn so it is no longer an issue.
+							Changing link colours is an incredibly standard thing that beginners learn so it is no longer an issue.
 						</li>
 						<li>
-							The design part of creating a webpage has been a huge aspect of development from small projects to huge ones. The tools that are not available to beginners are allowing them to quickly learn how to make a readible webpage and the importance of it is often reminded.
+							The design part of creating a webpage has been a huge aspect of development from small projects to huge ones. The tools that are not available to beginners are allowing them to quickly learn how to make a readable webpage and the importance of it is often reminded.
 						</li>
 						<li>
 							The flexibility of CSS allows the web developers to properly adjust the font size appropriately to the device the user is using. Because of that a good web design never experiences such issues.
 						</li>
 						<li>
-							The maximazing the Search Engine Visibility is a vital part of web design and is always taken care of with caution.
+							The maximizing the Search Engine Visibility is a vital part of web design and is always taken care of with caution.
 						</li>
 						<li>
 							Ads became universally hated part of web experience and designers know exactly how to make the contents of their page visibly stand out from them.
 						</li>
 						<li>
-							The standards within the web design industry had a lot of time to form and the popular practices are well-known and followed by everybody.
+							The standards within the web design industry had a lot of time to form and popular practices are well-known and followed by everybody.
 						</li>
 						<li>
-							The practice of opening a new browser window is non-existent. However, the way users interact with internet has also changed and because of that opening a new browser tab may be a desirable outcome of some actions.
+							The practice of opening a new browser window is non-existent. However, the way users interact with the internet has also changed and because of that opening, a new browser tab may be a desirable outcome of some actions.
 						</li>
 						<li>
 							Sellers have learned throughout the years what is the desired information of their websites and they follow those criteria carefully. They are well aware of what the users are looking for in their websites and they provide this information.
 						</li>
 					</ol>
-					The mistakes listed on that website still stand however the difference is that the standards for good website have increased and the issues that are listed here are encountered rearely while browsing the internet. I would say that the top 10 list is still relevant and everyone in the industry should be cognisant of those bad practices even though it became a norm to avoid them.
+					The mistakes listed on that website still stand however the difference is that the standards for good website have increased and the issues that are listed here are encountered rarely while browsing the internet. I would say that the top 10 list is still relevant and everyone in the industry should be cognizant of those bad practices even though it became a norm to avoid them.
 				</li>
 				<li>
-					We picked the website: https://techcrunch.com/ Our A/B test is aimed to improve the number of advertisement offers the company gets. We aim to achieve that by changing the colour of the Advertise button to black. The first version will maintain the current design while the second version varies by the colour of the Advertise button. The dependent variable, which measures the performance, will be the number of advertisement offers and the independent variable will be the font colour of Advertise button. Our hypothesis is that since the button will stand out, more people will click on it and the company will get more advertisement offers.
+					We picked the website: https://techcrunch.com/ Our A/B test is aimed to improve the number of advertisement offers the company gets. We aim to achieve that by changing the colour of the Advertise button to black. The first version will maintain the current design while the second version varies by the colour of the Advertise button. The dependent variable, which measures the performance, will be the number of advertisement offers and the independent variable will be the font colour of the Advertise button. Our hypothesis is that since the button will stand out, more people will click on it and the company will get more advertisement offers.
 				</li>
 				<li>
 					Answers for each question: 1.Strongly disagree 2.Disagree 3.Neither agree nor disagree 4.Agree 5.Strongly agree
@@ -606,17 +606,17 @@
 							<td><input type="radio" /></td>
 						</tr>
 					</table>
-					Our survey aimed to measure customer satisfaction and we found that the best and also the most common way to do that is to present user with easy to operate 1 to 5 scale together with short questions. This way of introducing survey to a user is very inviting and easy to complete, which we hope would lead to high number of completed surveys.
+					Our survey aimed to measure customer satisfaction and we found that the best and also the most common way to do that is to present a user with easy to operate 1 to 5 scale together with short questions. This way of introducing a survey to a user is very inviting and easy to complete, which we hope would lead to a high number of completed surveys.
 				</li>
 				<li>
 					<p>
-						Common Log Format helps developing Web log analysis sofware because it is a standardized format meaning that files can be read analyzed by variaty of web analysis program without the needs to convert the format of the file to different one. This consitancy allows people to develop additional feature of existing software of new software with more ease. <br/>
-						Selecting where and how websites (especially complex ones) should be interconnected via hyperlinks can be a difficult task for a human editor. Because of that use of logs is desirable path to pursue. Introduction of server logs allow for gathering information about which links are being used and furthermore give implicit information where potential links would be useful. <br/>
-						The dependent variable would be number of times users click specific links and independent variable would be the position and structure of links on the webpage. The hypothesis would be that links which are not desirable would not be clicked often by the users as represented by the log data.
+						Common Log Format helps developing Web log analysis software because it is a standardized format meaning that files can be read analyzed by a variety of web analysis program without the needs to convert the format of the file to different one. This consistency allows people to develop an additional feature of existing software of new software with more ease. <br/>
+            Selecting where and how websites (especially complex ones) should be interconnected via hyperlinks can be a difficult task for a human editor. Because of that use of logs is a desirable path to pursue. Introduction of server logs allows for gathering information about which links are being used and furthermore give implicit information where potential links would be useful. <br/>
+            The dependent variable would be a number of times users click specific links and independent variable would be the position and structure of links on the webpage. The hypothesis would be that links which are not desirable would not be clicked often by the users as represented by the log data.
 					</p>
 				</li>
 				<li>
-					11.11.1998 Google.com was 4 times crawled by the Wayback Machine
+					11.11.1998 Google.com was crawled first 4 times by the Wayback Machine. In 1999 there were few pauses when it wasn't updated for a while(from June to September including and from December 1999 to January 2000). At first, it looked like the simplest website without any images, interactions. Later(April 1999) it looked like the Google that we know now: Google letters in the middle of the page, searching engine and button "I'm feeling lucky". In October 2000, Google has already 1,060,000,000 web pages and has language and display options enabled for choosing. In July 2001 Google is a trademark that is open for cooperation and has 1,346,966,000 web pages for searching. In 2002 Google allows you to make an image search, groups, news and use Google within specific topics. In 2003 - 3,307,998,701 web pages! In 2004 Google offers advertising programs, business solutions, Google tools and 4,285,199,774 web pages. In September 2005, Google offers 8,168,684,336 web pages, improved Advanced search and expanded Google Services: Answers, Catalogs, Labs, University Search and so on, and Google Tools: Blogger, Picasa, Talk, Earth and so on. In 2006 the tools for Web Developers are added, Maps, Video, Desktop, Gmail, Translate and opportunity to use Google on your mobile: SMS, maps and Google search. In 2007, Google started implementing pictures on their main searching bar such that whenever there is someone's Birthday or celebration, it will show the picture, with decorated "Google" word, related to the event. After clicking on this picture, a user can get all information about the event, for example, 1st of November 2007 - Halloween on the Web! At the beginning of 2008, Advanced Search looks completely different. Now, you can find web pages that include or does not include a particular word/phrase on the page. Google becomes more and more sensitive to the information is searched, gives more opportunities to find something very specific. Google offers Book, Code, Scholar, News archive, different operating systems(Linux, Apple, Microsoft), Shopping search. In 2009 - Google Bar with advanced web page translation, messages under a searching bar with tips and updates. In 2010 - updated picture of Google word above the searching bar, better design of the page, Google Voice is implemented. There are a lot of features are implemented from 2010 till now, but overall from the "birth" of Google till now there were 545.907 captures and this number was, is and will be increasing throughout the whole history of Google.
 				</li>
 			</ol>
 		<hr></hr>
