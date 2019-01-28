@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>API Documentation</title>
-  <link rel="stylesheet" type="text/css" href="css/docs.css">
-</head>
-<body>
-  <h3>API Documentation</h3>
-  <table align="center">
-    <tr>
-      <th>Method</th>
-      <th>HTTP Request</th>
-      <th>Description</th>
-      <th>Requested Data</th>
-    </tr>
-    <tr>
-      <th>GET</th>
-      <th>http://localhost:8080/retrieve</th>
-      <th>Gets all products from the supermarket database.</th>
-      <th></th>
-    </tr>
-    <tr>
-      <th>GET</th>
-      <th>http://localhost:8080/retrieve/&lt;id&gt;</th>
-      <th>Gets all products from the supermarket database by id.</th>
-      <th>id</th>
-    </tr>
-    <tr>
-      <th>POST</th>
-      <th>http://localhost:8080/create</th>
-      <th>Adds product in the supermarket database.</th>
-      <th>Product, Origin, Best Before Date, Amount, Image</th>
-    </tr>
-    <tr>
-      <th>PUT</th>
-      <th>http://localhost:8080/update/&lt;id&gt;</th>
-      <th>Updates the product from the supermarket database by id.</th>
-      <th>Product, Origin, Best Before Date, Amount, Image, id</th>
-    </tr>
-    <tr>
-      <th>DELETE</th>
-      <th>http://localhost:8080/delete/&lt;id&gt;</th>
-      <th>Deletes the product from the supermarket database by id.</th>
-      <th>id</th>
-    </tr>
-  </table>
+  <head>
+    <title>API Documentation</title>
+    <link rel="stylesheet" type="text/css" href="css/docs.css">
+  </head>
+  <body>
+    <h3>API Documentation</h3>
+    <table align="center">
+      <tr>
+        <th>Method</th>
+        <th>HTTP Request</th>
+        <th>Description</th>
+        <th>Requested Data</th>
+      </tr>
+      <tr>
+        <th>GET</th>
+        <th>http://localhost:8080/retrieve</th>
+        <th>Gets all products from the supermarket database.</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>GET</th>
+        <th>http://localhost:8080/retrieve/&lt;id&gt;</th>
+        <th>Gets all products from the supermarket database by id.</th>
+        <th>id</th>
+      </tr>
+      <tr>
+        <th>POST</th>
+        <th>http://localhost:8080/create</th>
+        <th>Adds product in the supermarket database.</th>
+        <th>Product, Origin, Best Before Date, Amount, Image</th>
+      </tr>
+      <tr>
+        <th>PUT</th>
+        <th>http://localhost:8080/update/&lt;id&gt;</th>
+        <th>Updates the product from the supermarket database by id.</th>
+        <th>Product, Origin, Best Before Date, Amount, Image, id</th>
+      </tr>
+      <tr>
+        <th>DELETE</th>
+        <th>http://localhost:8080/delete/&lt;id&gt;</th>
+        <th>Deletes the product from the supermarket database by id.</th>
+        <th>id</th>
+      </tr>
+    </table>
 
-    <h1 class="Method">/retrieve</h1>
-    <h2 class="Method">Method GET</h2>
-      <p class="Description"><strong>Gets all products from the supermarket database and returns 200 when items are successfully found.</strong></p>
-      <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}, </p>
-      <p class="Example">{"origin": "India", "product": "Banana", "amount": "120kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bananas.jpg/640px-Bananas.jpg", "best_before_date": "February 2019", "id":"2"}, </p>
-      <p class="Example">{"origin": "test", "product": "Test", "amount": "test", "image": "https://rockandresole.com/wp-content/uploads/2017/04/58832_300x300.jpg", "best_before_date": "2019-01-02"}, "id":"3"] </p>
-    </div>
+      <h1 class="Method">/retrieve</h1>
+      <h2 class="Method">Method GET</h2>
+        <p class="Description"><strong>Gets all products from the supermarket database and returns 200 when items are successfully found.</strong></p>
+        <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}, </p>
+        <p class="Example">{"origin": "India", "product": "Banana", "amount": "120kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bananas.jpg/640px-Bananas.jpg", "best_before_date": "February 2019", "id":"2"}, </p>
+        <p class="Example">{"origin": "test", "product": "Test", "amount": "test", "image": "https://rockandresole.com/wp-content/uploads/2017/04/58832_300x300.jpg", "best_before_date": "2019-01-02"}, "id":"3"] </p>
+      </div>
 
-    <h1 class="Method">/retrieve/&lt;id&gt;</h1>
-    <h2 class="Method">Method GET</h2>
-      <p class="Description"><strong>Gets the product from the supermarket database by id and returns 200 when the item is successfully found.</strong></p>
-      <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}] </p>
+      <h1 class="Method">/retrieve/&lt;id&gt;</h1>
+      <h2 class="Method">Method GET</h2>
+        <p class="Description"><strong>Gets the product from the supermarket database by id and returns 200 when the item is successfully found.</strong></p>
+        <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "100kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "November 2019", "id":"1"}] </p>
 
-    <h1 class="Method">/create</h1>
-    <h2 class="Method">Method POST</h2>
-      <p class="Description"><strong>Adds product in the supermarket database and returns 201 when the item is successfully added.</strong></p>
-      <p class="Example"> { "url": "http://localhost:8080/create" } </p>
+      <h1 class="Method">/create</h1>
+      <h2 class="Method">Method POST</h2>
+        <p class="Description"><strong>Adds product in the supermarket database and returns 201 when the item is successfully added.</strong></p>
+        <p class="Example"> { "url": "http://localhost:8080/create" } </p>
 
-    <h1 class="Method">/update/&lt;id&gt;</h1>
-    <h2 class="Method">Method PUT</h2>
-      <p class="Description"><strong>Updates information about the product from supermarket database by id and returns 201 when the item is successfully updated.</strong></p>
-      <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "50kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "September 2019", "id":"1"}] </p>
+      <h1 class="Method">/update/&lt;id&gt;</h1>
+      <h2 class="Method">Method PUT</h2>
+        <p class="Description"><strong>Updates information about the product from supermarket database by id and returns 201 when the item is successfully updated.</strong></p>
+        <p class="Example"> [{"origin": "The Netherlands", "product": "Apples", "amount": "50kg", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg", "best_before_date": "September 2019", "id":"1"}] </p>
 
-    <h1 class="Method">/delete/&lt;id&gt;</h1>
-    <h2 class="Method">Method DELETE</h2>
-      <p class="Description"><strong>Deletes information about the product from supermarket database by id and returns 204 when the item is successfully deleted.</strong></p>
+      <h1 class="Method">/delete/&lt;id&gt;</h1>
+      <h2 class="Method">Method DELETE</h2>
+        <p class="Description"><strong>Deletes information about the product from supermarket database by id and returns 204 when the item is successfully deleted.</strong></p>
 
-</body>
+  </body>
 </html>
