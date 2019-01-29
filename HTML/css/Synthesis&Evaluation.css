@@ -1,0 +1,35 @@
+body {
+  background-color: Cornsilk;
+}
+div.Name {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  width: 50%;
+  margin: 40px auto 40px;
+  text-align: center;
+}
+.Heading {
+  text-align: center;
+  font-size: 35px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border: 2px solid black;
+  margin: 80px auto 50px;
+  width: 50%;
+}
+.Content {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  width: 70%;
+  text-align: center;
+  margin: 0px auto;
+}
+table {
+  margin: 0px auto;
+}
+table, th, td{
+  padding: 5px 10px;
+  background-color: White;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
