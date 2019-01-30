@@ -9,9 +9,7 @@ div.Start {
 div.Start .title {
   float: left;
   text-transform: capitalize;
-  font-family: "Times New Roman", Times, serif;
-  font-style: italic;
-  font-size: 250%;
+  font: italic 250% "Times New Roman", serif;
 }
 div.Start .quote {
   float: right;
@@ -50,10 +48,9 @@ nav a:active {
 }
 
 h2.ListsTitle {
-  border-bottom: 1px solid rgb(177, 166, 166);
-  border-top: 1px solid rgb(177, 166, 166);
+  border: double;
   margin: 25px auto;
-  width: 40%;
+  width: 30%;
   padding: 10px;
   text-align: center;
 }
@@ -80,11 +77,13 @@ p.ShopNote {
 }
 
 pre.BigQuote {
+  background: #F6E815 url(https://www.midori-browser.org/wp-content/uploads/2019/01/iconfinder_simpline_60_2305602.png) no-repeat center;
   padding-top: 25px;
   margin: 0px auto 25px;
   width: 20%;
   border-style: solid;
   border-color: red green blue yellow;
+  border-width: thick;
   color: rgb(26, 6, 53);
   text-align: center;
   text-transform: capitalize;
