@@ -6,8 +6,7 @@ $ npm install sqlite express body-parser
 
 # Running the server
 
-You can start the server by executing the Python script in a command line interface (such as PowerShell on Windows or a Terminal on Mac or linux):
-
+You can start the server by executing the Python script:
 ```
 $ python server.py
 ```
